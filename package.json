@@ -1,0 +1,11 @@
+{
+  "name": "mega-rewards",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Mega Rewards prototype: static site plus a small accounts API backed by a private Vercel Blob store.",
+  "dependencies": {
+    "@vercel/blob": "^2.8.2"
+  },
+  "engines": { "node": ">=20" }
+}
