@@ -1,4 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Giveaways — Mega Rewards</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free to enter, real to win. Browse open, upcoming and completed Mega Rewards giveaways and enter today's draw."><meta name="theme-color" content="#0b0b0b"><title>Giveaways — Mega Rewards</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <!-- GEOM GRAPHIC (Adobe Fonts): create a Web Project at fonts.adobe.com, add Geom Graphic, paste its kit ID below. Until then Montserrat is the fallback. -->
 <link rel="stylesheet" href="https://use.typekit.net/YOUR_KIT_ID.css">
@@ -214,6 +215,14 @@ body.mo .nav.solid .me{background:rgba(255,255,255,.16);color:#fff}
 .me-dd a,.me-dd .me-out{min-height:48px}
 }
 @media(prefers-reduced-motion:reduce){.me-dd,.me .cv{transition:none}}
+
+/* ===== Polish: touch targets, anchors, motion ===== */
+html{scroll-padding-top:84px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+a,button{touch-action:manipulation}
+.tg2 button,#rs{position:relative}
+@media(hover:none),(max-width:860px){.tg2 button:before,.pwt:before,#rs:before{content:'';position:absolute;inset:-10px -10px}}
+@media(max-width:860px){#menu .sl{gap:0 20px;padding:4px 0 2px}#menu .sl a{padding:8px 0}}
+@media(prefers-reduced-motion:reduce){*,:before,:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style></head><body><header class="nav"><a class="lg" href="index.html" aria-label="Mega Rewards home"><img class="lgo" alt="Mega Rewards"></a><div class="nr"><a class="mini" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><button id="mb" class="tx">Explore</button><button id="hb" class="hb" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button><a class="li" href="account.html#login">Log in</a><a class="jb" href="account.html">Join free</a></div></header><div id="menu"><div class="row"><span>01</span><a href="giveaways.html"><b>Win</b></a><div class="sl"><a href="giveaways.html">Giveaways</a><a href="tipping.html">Tipping</a><a href="winners.html">Winners</a><a href="giveaways.html#spin">Mega Spin</a></div></div><div class="row"><span>02</span><a href="store.html"><b>Save</b></a><div class="sl"><a href="store.html">Store</a><a href="store.html#catch">Mega Catch</a><a href="plus.html#how">How savings work</a></div></div><div class="row"><span>03</span><a href="plus.html"><b>Plus</b></a><div class="sl"><a href="plus.html#plans">Plans</a><a href="plus.html#calc">Calculator</a><a href="plus.html#faq">FAQ</a></div></div><div class="row"><span>04</span><a href="rewards.html"><b>Rewards</b></a><div class="sl"><a href="rewards.html">Points</a><a href="rewards.html#missions">Missions</a><a href="rewards.html#shop">Points shop</a><a href="rewards.html#board">Leaderboard</a></div></div><div class="row"><span>05</span><a href="community.html"><b>Community</b></a><div class="sl"><a href="community.html">Partners</a><a href="community.html#moments">Mega Moments</a><a href="partner.html">Partner with us</a></div></div><div class="mact"><a class="mc" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><a class="mbtn" id="mLi" href="account.html#login">Log in</a><a class="mbtn pri" id="mJo" href="account.html">Join free</a></div></div><header class="ph2"><div class="bg"><img data-p="1503266980949-bd30d04d0b7a" alt=""></div><div class="wrap"><p class="eb">Win · Free to enter</p><h1><span class="ln"><i>Free to enter.</i></span><span class="ln"><i class="it">Real to win.</i></span></h1><p class="hs">Every subscriber gets a ticket in every draw they enter. Every entry earns points.</p><div class="cdw"><small id="cL">Next draw · Mega Daily · $1,000 · 6pm Adelaide</small><div class="dg"><span><b id="cH">--</b><em>Hrs</em></span><span><b id="cM">--</b><em>Min</em></span><span><b id="cS">--</b><em>Sec</em></span><a class="jb" href="#grid">Enter free</a></div></div></div></header><nav class="sub2"><div class="wrap"><a href="giveaways.html" class="on">Giveaways</a><a href="tipping.html">Tipping</a><a href="winners.html">Winners</a><a href="giveaways.html#spin">Mega Spin</a></div></nav>
 <section class="sec wrap"><div class="stps rv"><div><b>01</b><h4>Join free</h4><p>Under a minute. No card, no catch.</p></div><div><b>02</b><h4>Enter any giveaway</h4><p>Your ticket numbers appear in your dashboard straight away.</p></div><div><b>03</b><h4>Level up</h4><p>Every entry earns points, and 100 points buy an extra ticket.</p></div><div><b>04</b><h4>We call the winner</h4><p>A certified electronic draw, then a phone call and a handover.</p></div></div></section>
 <section class="wrap" style="padding-bottom:clamp(80px,12vw,160px)"><div class="th2"><div><p class="eb">Featured experiences</p><h2>The big ones.</h2></div></div><div class="fcg rv" id="ft"></div></section>
@@ -319,7 +328,7 @@ addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;if(!seen){x=tx;y=ty;s
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],rm=matchMedia('(prefers-reduced-motion: reduce)').matches,fm=v=>'$'+Math.round(v).toLocaleString('en-US'),z=v=>String(v).padStart(2,'0'),cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
 const U=(p,w=900)=>`https://images.unsplash.com/photo-${p}?auto=format&fit=crop&q=75&w=${w}`;
-const imgs=()=>$$('img[data-p]').forEach(i=>{if(!i.getAttribute('src'))i.src=U(i.dataset.p,innerWidth>900?1600:1000)});imgs();
+const imgs=()=>$$('img[data-p]').forEach(i=>{if(!i.getAttribute('src')){if(i.getBoundingClientRect().top>innerHeight*1.5)i.loading='lazy';i.decoding='async';i.src=U(i.dataset.p,innerWidth>900?1600:1000)}});imgs();
 const dt=d=>new Date(Date.now()+d*864e5).toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short'});
 const pop=e=>{if(window.gsap&&!rm&&e.length)gsap.fromTo(e,{y:40,opacity:0},{y:0,opacity:1,stagger:.06,duration:.8,ease:'power3.out',clearProps:'transform,opacity'})};
 const ST=()=>{if(window.ScrollTrigger&&!rm)ScrollTrigger.refresh()};
@@ -368,10 +377,11 @@ imgs();ST();</script><script>
 (function(){const mb=document.getElementById('mb'),hb=document.getElementById('hb'),mn=document.getElementById('menu');if(!mb||!hb||!mn)return;
 const isOpen=()=>mb.textContent.trim()==='Close';
 let dd=()=>{};
-function sync(){const o=isOpen();document.body.classList.toggle('mo',o);hb.setAttribute('aria-expanded',o);hb.setAttribute('aria-label',o?'Close menu':'Open menu')}
-new MutationObserver(sync).observe(mb,{childList:true,characterData:true,subtree:true});
+function setInert(){mn.inert=!(isOpen()||mn.style.clipPath==='none')}
+function sync(){const o=isOpen();setInert();document.body.classList.toggle('mo',o);hb.setAttribute('aria-expanded',o);hb.setAttribute('aria-label',o?'Close menu':'Open menu')}
+new MutationObserver(sync).observe(mb,{childList:true,characterData:true,subtree:true});setInert();
 hb.addEventListener('click',()=>{dd(false);mb.click()});
-mb.addEventListener('click',()=>dd(false));
+mb.addEventListener('click',()=>{dd(false);setInert()});
 mn.addEventListener('click',e=>{if(e.target.closest('a')&&isOpen())mb.click()});
 mn.querySelectorAll('.row').forEach(r=>{if(!r.querySelector('.sl'))return;const t=r.querySelector('a b').textContent;const x=document.createElement('button');x.type='button';x.className='xp';x.setAttribute('aria-expanded','false');x.setAttribute('aria-label','Show '+t+' links');x.onclick=()=>{const o=r.classList.toggle('open');x.setAttribute('aria-expanded',o)};r.appendChild(x)});
 const here=(location.pathname.split('/').pop()||'index.html');

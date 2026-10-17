@@ -1,4 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Store — Mega Rewards</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="What are you looking for? Browse the Mega Rewards store and compare Plus prices with RRP."><meta name="theme-color" content="#0b0b0b"><title>Store — Mega Rewards</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <!-- GEOM GRAPHIC (Adobe Fonts): create a Web Project at fonts.adobe.com, add Geom Graphic, paste its kit ID below. Until then Montserrat is the fallback. -->
 <link rel="stylesheet" href="https://use.typekit.net/YOUR_KIT_ID.css">
@@ -214,6 +215,14 @@ body.mo .nav.solid .me{background:rgba(255,255,255,.16);color:#fff}
 .me-dd a,.me-dd .me-out{min-height:48px}
 }
 @media(prefers-reduced-motion:reduce){.me-dd,.me .cv{transition:none}}
+
+/* ===== Polish: touch targets, anchors, motion ===== */
+html{scroll-padding-top:84px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+a,button{touch-action:manipulation}
+.tg2 button,#rs{position:relative}
+@media(hover:none),(max-width:860px){.tg2 button:before,.pwt:before,#rs:before{content:'';position:absolute;inset:-10px -10px}}
+@media(max-width:860px){#menu .sl{gap:0 20px;padding:4px 0 2px}#menu .sl a{padding:8px 0}}
+@media(prefers-reduced-motion:reduce){*,:before,:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style></head><body><header class="nav"><a class="lg" href="index.html" aria-label="Mega Rewards home"><img class="lgo" alt="Mega Rewards"></a><div class="nr"><a class="mini" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><button id="mb" class="tx">Explore</button><button id="hb" class="hb" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button><a class="li" href="account.html#login">Log in</a><a class="jb" href="account.html">Join free</a></div></header><div id="menu"><div class="row"><span>01</span><a href="giveaways.html"><b>Win</b></a><div class="sl"><a href="giveaways.html">Giveaways</a><a href="tipping.html">Tipping</a><a href="winners.html">Winners</a><a href="giveaways.html#spin">Mega Spin</a></div></div><div class="row"><span>02</span><a href="store.html"><b>Save</b></a><div class="sl"><a href="store.html">Store</a><a href="store.html#catch">Mega Catch</a><a href="plus.html#how">How savings work</a></div></div><div class="row"><span>03</span><a href="plus.html"><b>Plus</b></a><div class="sl"><a href="plus.html#plans">Plans</a><a href="plus.html#calc">Calculator</a><a href="plus.html#faq">FAQ</a></div></div><div class="row"><span>04</span><a href="rewards.html"><b>Rewards</b></a><div class="sl"><a href="rewards.html">Points</a><a href="rewards.html#missions">Missions</a><a href="rewards.html#shop">Points shop</a><a href="rewards.html#board">Leaderboard</a></div></div><div class="row"><span>05</span><a href="community.html"><b>Community</b></a><div class="sl"><a href="community.html">Partners</a><a href="community.html#moments">Mega Moments</a><a href="partner.html">Partner with us</a></div></div><div class="mact"><a class="mc" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><a class="mbtn" id="mLi" href="account.html#login">Log in</a><a class="mbtn pri" id="mJo" href="account.html">Join free</a></div></div><header class="ph2" style="height:auto;min-height:92vh"><div class="bg"><img data-p="1534452203293-494d7ddbf7e0" alt=""></div><div class="wrap" style="padding-top:150px"><p class="eb">Save · The store</p><h1><span class="ln"><i>What are you</i></span><span class="ln"><i class="it">looking for?</i></span></h1>
 <div class="hx" style="margin-top:34px;max-width:860px"><div class="sbar"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffd800" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" placeholder="Try Apple Watch, fuel gift card, NBL tickets, mobile plan…" aria-label="Search the store"></div><div class="chips" style="margin-top:20px;color:#fff" id="pop"><button class="chip">Apple Watch</button><button class="chip">Gift card</button><button class="chip">NBL tickets</button><button class="chip">Mobile</button><button class="chip">Dining</button></div></div>
 <div class="dept hx" id="dp" style="margin-top:40px"></div></div></header>
@@ -320,7 +329,7 @@ addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;if(!seen){x=tx;y=ty;s
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],rm=matchMedia('(prefers-reduced-motion: reduce)').matches,fm=v=>'$'+Math.round(v).toLocaleString('en-US'),z=v=>String(v).padStart(2,'0'),cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
 const U=(p,w=900)=>`https://images.unsplash.com/photo-${p}?auto=format&fit=crop&q=75&w=${w}`;
-const imgs=()=>$$('img[data-p]').forEach(i=>{if(!i.getAttribute('src'))i.src=U(i.dataset.p,innerWidth>900?1600:1000)});imgs();
+const imgs=()=>$$('img[data-p]').forEach(i=>{if(!i.getAttribute('src')){if(i.getBoundingClientRect().top>innerHeight*1.5)i.loading='lazy';i.decoding='async';i.src=U(i.dataset.p,innerWidth>900?1600:1000)}});imgs();
 const dt=d=>new Date(Date.now()+d*864e5).toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short'});
 const pop=e=>{if(window.gsap&&!rm&&e.length)gsap.fromTo(e,{y:40,opacity:0},{y:0,opacity:1,stagger:.06,duration:.8,ease:'power3.out',clearProps:'transform,opacity'})};
 const ST=()=>{if(window.ScrollTrigger&&!rm)ScrollTrigger.refresh()};
@@ -382,10 +391,11 @@ imgs();ST();</script><script>
 (function(){const mb=document.getElementById('mb'),hb=document.getElementById('hb'),mn=document.getElementById('menu');if(!mb||!hb||!mn)return;
 const isOpen=()=>mb.textContent.trim()==='Close';
 let dd=()=>{};
-function sync(){const o=isOpen();document.body.classList.toggle('mo',o);hb.setAttribute('aria-expanded',o);hb.setAttribute('aria-label',o?'Close menu':'Open menu')}
-new MutationObserver(sync).observe(mb,{childList:true,characterData:true,subtree:true});
+function setInert(){mn.inert=!(isOpen()||mn.style.clipPath==='none')}
+function sync(){const o=isOpen();setInert();document.body.classList.toggle('mo',o);hb.setAttribute('aria-expanded',o);hb.setAttribute('aria-label',o?'Close menu':'Open menu')}
+new MutationObserver(sync).observe(mb,{childList:true,characterData:true,subtree:true});setInert();
 hb.addEventListener('click',()=>{dd(false);mb.click()});
-mb.addEventListener('click',()=>dd(false));
+mb.addEventListener('click',()=>{dd(false);setInert()});
 mn.addEventListener('click',e=>{if(e.target.closest('a')&&isOpen())mb.click()});
 mn.querySelectorAll('.row').forEach(r=>{if(!r.querySelector('.sl'))return;const t=r.querySelector('a b').textContent;const x=document.createElement('button');x.type='button';x.className='xp';x.setAttribute('aria-expanded','false');x.setAttribute('aria-label','Show '+t+' links');x.onclick=()=>{const o=r.classList.toggle('open');x.setAttribute('aria-expanded',o)};r.appendChild(x)});
 const here=(location.pathname.split('/').pop()||'index.html');
