@@ -183,24 +183,37 @@ body.mo .nav.solid .me{background:rgba(255,255,255,.16);color:#fff}
 
 /* ===== Logged-in profile dropdown ===== */
 .mw{position:relative;display:inline-flex}
-.me[aria-haspopup]{cursor:pointer}
-.me .cv{width:7px;height:7px;margin:0 2px 3px 0;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);opacity:.7;transition:transform .3s}
-.me[aria-expanded=true] .cv{transform:rotate(225deg) translate(-2px,-2px)}
-.pd{position:absolute;top:calc(100% + 14px);right:0;width:272px;z-index:90;background:var(--k);color:#fff;border-radius:16px;padding:8px;box-shadow:0 24px 60px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.1);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.98);transform-origin:top right;transition:opacity .25s,transform .35s cubic-bezier(.2,.7,.2,1),visibility 0s .25s}
-.pd.on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
-.pd .ph{display:flex;gap:12px;align-items:center;padding:12px 12px 14px;margin-bottom:6px;border-bottom:1px solid #2a2a2a}
-.pd .ph i{width:40px;height:40px;flex:none;border-radius:50%;background:var(--y);color:var(--k);display:grid;place-items:center;font-style:normal;font-weight:700}
-.pd .ph div{min-width:0}
-.pd .ph b{display:block;font-weight:600;font-size:15px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pd .ph small{display:block;font-size:12px;opacity:.6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pd .pi{display:flex;align-items:center;width:100%;min-height:44px;padding:11px 12px;border-radius:10px;font-size:15px;font-weight:500;text-align:left;color:#fff;background:none;transition:background .2s}
-.pd .pi:hover,.pd .pi:focus-visible{background:rgba(255,255,255,.1);outline:0}
-.pd .sep{height:1px;margin:6px 4px;background:#2a2a2a}
+.nr .me{cursor:pointer}
+.me .cv{width:7px;height:7px;flex:none;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .3s;opacity:.7}
+.mw.open .me .cv{transform:rotate(-135deg) translateY(-2px)}
+.me-dd{position:absolute;right:0;top:calc(100% + 14px);width:310px;max-width:calc(100vw - 24px);max-height:calc(100vh - 110px);overflow-y:auto;overscroll-behavior:contain;background:#fff;color:var(--k);border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.4),0 0 0 1px rgba(0,0,0,.06);padding:8px;opacity:0;visibility:hidden;transform:translateY(-8px) scale(.97);transform-origin:top right;transition:opacity .22s,transform .35s cubic-bezier(.2,.7,.2,1),visibility 0s .35s}
+.mw.open .me-dd{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.me-dd [hidden]{display:none!important}
+.me-hd{display:flex;gap:12px;align-items:center;padding:12px 12px 10px}
+.me-hd>i{width:46px;height:46px;border-radius:50%;background:var(--y);display:grid;place-items:center;font:700 19px var(--h);font-style:normal;flex:none}
+.me-hd b{display:block;font-size:15px;line-height:1.25}
+.me-hd small{display:block;opacity:.6;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:210px}
+.me-lv{margin:2px 12px 10px;padding:12px;border-radius:12px;background:#f3f2ee}
+.me-r{display:flex;justify-content:space-between;align-items:baseline;font-size:13px}
+.me-r b{font:500 22px var(--h);letter-spacing:-.02em}
+.me-r em{font-style:normal;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--k);color:#fff;padding:4px 9px;border-radius:99px}
+.me-bar{height:6px;background:#dedbd0;border-radius:99px;margin:10px 0 7px;overflow:hidden}
+.me-bar i{display:block;height:100%;width:var(--w,0);background:var(--y);border-radius:99px;transition:width .8s .15s cubic-bezier(.2,.7,.2,1)}
+.me-lv small{font-size:12px;opacity:.65}
+.me-dd a,.me-dd .me-out{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:12px;border-radius:10px;font-size:14px;font-weight:600;text-align:left;color:var(--k);transition:background .2s,padding .25s}
+.me-dd a:after{content:'\2192';opacity:0;transform:translateX(-6px);transition:opacity .25s,transform .25s}
+.me-dd a:hover,.me-dd a:focus-visible{background:var(--y);padding-left:18px;outline:0}
+.me-dd a:hover:after,.me-dd a:focus-visible:after{opacity:1;transform:none}
+.me-dd a.me-up{background:var(--k);color:#fff;margin:4px 0}.me-dd a.me-up:hover{background:var(--y);color:var(--k)}
+.me-dd hr{border:0;border-top:1px solid #eceae2;margin:6px 4px}
+.me-dd .me-out{color:#c4160a}.me-dd .me-out:hover,.me-dd .me-out:focus-visible{background:#ffe9e7;padding-left:18px;outline:0}
 @media(max-width:860px){
-.me .cv{display:none}
-.pd{position:fixed;top:68px;right:max(12px,var(--gut));width:min(300px,calc(100vw - 24px))}
-.pd .pi{min-height:48px}
+.mw,.nr{position:static}
+.me-dd{left:auto;right:max(12px,var(--gut));top:100%;margin-top:8px;width:min(340px,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 96px)}
+.nr .me{padding:5px 12px 5px 5px;gap:8px}
+.me-dd a,.me-dd .me-out{min-height:48px}
 }
+@media(prefers-reduced-motion:reduce){.me-dd,.me .cv{transition:none}}
 </style></head><body data-solid><header class="nav"><a class="lg" href="index.html" aria-label="Mega Rewards home"><img class="lgo" alt="Mega Rewards"></a><div class="nr"><a class="mini" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><button id="mb" class="tx">Explore</button><button id="hb" class="hb" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button><a class="li" href="account.html#login">Log in</a><a class="jb" href="account.html">Join free</a></div></header><div id="menu"><div class="row"><span>01</span><a href="giveaways.html"><b>Win</b></a><div class="sl"><a href="giveaways.html">Giveaways</a><a href="tipping.html">Tipping</a><a href="winners.html">Winners</a><a href="giveaways.html#spin">Mega Spin</a></div></div><div class="row"><span>02</span><a href="store.html"><b>Save</b></a><div class="sl"><a href="store.html">Store</a><a href="store.html#catch">Mega Catch</a><a href="plus.html#how">How savings work</a></div></div><div class="row"><span>03</span><a href="plus.html"><b>Plus</b></a><div class="sl"><a href="plus.html#plans">Plans</a><a href="plus.html#calc">Calculator</a><a href="plus.html#faq">FAQ</a></div></div><div class="row"><span>04</span><a href="rewards.html"><b>Rewards</b></a><div class="sl"><a href="rewards.html">Points</a><a href="rewards.html#missions">Missions</a><a href="rewards.html#shop">Points shop</a><a href="rewards.html#board">Leaderboard</a></div></div><div class="row"><span>05</span><a href="community.html"><b>Community</b></a><div class="sl"><a href="community.html">Partners</a><a href="community.html#moments">Mega Moments</a><a href="partner.html">Partner with us</a></div></div><div class="mact"><a class="mc" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><a class="mbtn" id="mLi" href="account.html#login">Log in</a><a class="mbtn pri" id="mJo" href="account.html">Join free</a></div></div><main class="ac2">
 <header class="ph2"><div class="bg"><img data-p="1679391029864-d46f366a456b" alt=""></div><div class="wrap"><p class="eb">Mega Rewards</p><h1><span class="ln"><i>Your ticket</i></span><span class="ln"><i class="it">in every draw.</i></span></h1>
 <div class="perks hx"><span>A free ticket in every giveaway</span><span>6,000+ discounts to browse</span><span>Points on everything you do</span></div><p class="cdl2 hx" style="margin:28px 0 0">Next draw in <b data-cd>--:--:--</b></p></div></header>
@@ -399,27 +412,37 @@ mb.addEventListener('click',()=>dd(false));
 mn.addEventListener('click',e=>{if(e.target.closest('a')&&isOpen())mb.click()});
 mn.querySelectorAll('.row').forEach(r=>{if(!r.querySelector('.sl'))return;const t=r.querySelector('a b').textContent;const x=document.createElement('button');x.type='button';x.className='xp';x.setAttribute('aria-expanded','false');x.setAttribute('aria-label','Show '+t+' links');x.onclick=()=>{const o=r.classList.toggle('open');x.setAttribute('aria-expanded',o)};r.appendChild(x)});
 const here=(location.pathname.split('/').pop()||'index.html');
-function goProfile(h){const t=document.querySelector('#settings');if(!t)return false;const y=t.getBoundingClientRect().top+scrollY-64;try{if(typeof lenis!=='undefined'&&lenis&&lenis.scrollTo)lenis.scrollTo(y,{duration:1.1});else scrollTo({top:y,behavior:'smooth'})}catch(_){scrollTo(0,y)}if(h==='#edit')setTimeout(()=>{const n=document.getElementById('nm2');if(n)n.focus({preventScroll:true})},750);return true}
-if(document.querySelector('main.pp')&&/^#(edit|settings)$/.test(location.hash)){let n=0;const iv=setInterval(()=>{if(document.getElementById('settings')||++n>40){clearInterval(iv);setTimeout(()=>goProfile(location.hash),500)}},100)}
+function scrollToId(id){const t=id?document.getElementById(id):document.body;if(!t)return false;const y=id?t.getBoundingClientRect().top+scrollY-64:0;try{if(typeof lenis!=='undefined'&&lenis&&lenis.scrollTo)lenis.scrollTo(y,{duration:1.1});else scrollTo({top:y,behavior:'smooth'})}catch(_){scrollTo(0,y)}return true}
+if(document.querySelector('main.pp')&&location.hash.length>1){const id=decodeURIComponent(location.hash.slice(1));let n=0;const iv=setInterval(()=>{if(document.getElementById(id)||++n>40){clearInterval(iv);setTimeout(()=>scrollToId(id),500)}},100)}
 let user=null;try{if(typeof MR!=='undefined')user=MR.user()}catch(_){}
 const out=()=>{MR.logout();location.href='index.html'};
 const chip=document.querySelector('.nr .me');
 if(user){
- const j=document.getElementById('mJo');j.textContent='Log out';j.href='index.html';j.onclick=e=>{e.preventDefault();out()};document.getElementById('mLi').classList.add('pri');j.classList.remove('pri');
+ const ma=mn.querySelector('.mact');if(ma)ma.remove();
+ mn.querySelectorAll('.sl a').forEach(a=>{const h=a.getAttribute('href');if(h==='profile.html'||h==='account.html#login')a.remove()});
  if(chip){
-  const w=document.createElement('span');w.className='mw';chip.parentNode.insertBefore(w,chip);w.appendChild(chip);
-  const cv=document.createElement('em');cv.className='cv';chip.appendChild(cv);
-  chip.setAttribute('role','button');chip.setAttribute('aria-haspopup','menu');chip.setAttribute('aria-expanded','false');
-  const pd=document.createElement('div');pd.className='pd';pd.setAttribute('role','menu');pd.setAttribute('aria-label','Account');
-  const ph=document.createElement('div');ph.className='ph';const av=document.createElement('i');av.textContent=(user.name||'?')[0].toUpperCase();const dv=document.createElement('div');const nb=document.createElement('b');nb.textContent=user.name||'';const sm=document.createElement('small');sm.textContent=user.email||'';dv.append(nb,sm);ph.append(av,dv);pd.append(ph);
-  [['My profile','profile.html'],['Edit profile','profile.html#edit'],['Account settings','profile.html#settings']].forEach(([t,h])=>{const a=document.createElement('a');a.className='pi';a.setAttribute('role','menuitem');a.href=h;a.textContent=t;a.addEventListener('click',e=>{dd(false);if(here==='profile.html'&&h.indexOf('#')>-1&&goProfile(h.slice(h.indexOf('#')))){e.preventDefault();history.replaceState(null,'',h)}});pd.append(a)});
-  const sp=document.createElement('div');sp.className='sep';pd.append(sp);
-  const lo=document.createElement('button');lo.type='button';lo.className='pi';lo.setAttribute('role','menuitem');lo.textContent='Log out';lo.onclick=out;pd.append(lo);
-  w.append(pd);
-  dd=o=>{pd.classList.toggle('on',o);chip.setAttribute('aria-expanded',o)};
-  chip.addEventListener('click',e=>{e.preventDefault();const will=!pd.classList.contains('on');if(will&&isOpen())mb.click();dd(will)});
+  const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+  const w=el('span','mw');chip.parentNode.insertBefore(w,chip);w.appendChild(chip);
+  chip.appendChild(el('em','cv'));
+  chip.setAttribute('role','button');chip.setAttribute('aria-haspopup','menu');chip.setAttribute('aria-expanded','false');chip.setAttribute('aria-label','Account menu');
+  const pn=el('div','me-dd');pn.setAttribute('role','menu');
+  const hav=el('i'),hn=el('b'),he=el('small'),hw=el('div');hw.append(hn,he);const hd=el('div','me-hd');hd.append(hav,hw);
+  const pb=el('b'),sp=el('span');sp.append(pb,document.createTextNode(' pts'));const lb=el('em'),r=el('div','me-r');r.append(sp,lb);
+  const bi=el('i'),bar=el('div','me-bar');bar.append(bi);const nx=el('small'),lv=el('div','me-lv');lv.append(r,bar,nx);
+  pn.append(hd,lv);
+  [['My profile','profile.html'],['Points and levels','profile.html#levels'],['Entries and activity','profile.html#activity'],['Savings and insights','profile.html#insights'],['Refer a mate','profile.html#referral'],['Settings and plan','profile.html#settings']].forEach(([t,u])=>{const a=el('a',null,t);a.href=u;a.setAttribute('role','menuitem');pn.append(a)});
+  pn.append(document.createElement('hr'));
+  const up=el('a','me-up','Start a free month');up.href='plus.html#plans';up.hidden=true;up.setAttribute('role','menuitem');pn.append(up);
+  const lo=el('button','me-out','Log out');lo.type='button';lo.setAttribute('role','menuitem');lo.onclick=out;pn.append(lo);
+  w.append(pn);
+  const LV=MR.LV,PL={free:'Free',plus:'Plus',mega:'Mega'};
+  function fill(){const u=MR.user();if(!u)return;const L=MR.lvl(u.pts),n=LV[L+1];hav.textContent=(u.name||'?')[0].toUpperCase();hn.textContent=u.name;he.textContent=(PL[u.plan]||'')+' plan \u00b7 '+u.email;pb.textContent=u.pts.toLocaleString('en-US');lb.textContent=LV[L][0];nx.textContent=n?(n[1]-u.pts).toLocaleString('en-US')+' points to '+n[0]:'You are at the top level';bi.style.setProperty('--w',(n?Math.max(4,Math.min(100,(u.pts-LV[L][1])/(n[1]-LV[L][1])*100)):100)+'%');up.hidden=u.plan!=='free'}
+  fill();
+  dd=o=>{w.classList.toggle('open',o);chip.setAttribute('aria-expanded',o)};
+  chip.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const will=!w.classList.contains('open');if(will){if(isOpen())mb.click();fill()}dd(will)});
   document.addEventListener('click',e=>{if(!w.contains(e.target))dd(false)});
-  addEventListener('keydown',e=>{if(e.key==='Escape'&&pd.classList.contains('on')){dd(false);chip.focus()}});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&w.classList.contains('open')){dd(false);chip.focus()}});
+  w.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a)return;dd(false);const h=a.getAttribute('href'),i=h.indexOf('#'),p=i<0?h:h.slice(0,i);if(p===here&&scrollToId(i<0?'':h.slice(i+1))){e.preventDefault();history.replaceState(null,'',h)}});
  }
 }
 addEventListener('keydown',e=>{if(e.key==='Escape'&&isOpen())mb.click()});
