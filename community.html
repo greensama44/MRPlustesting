@@ -149,7 +149,59 @@ footer{background:var(--k);color:#999;padding:30px var(--gut) 40px;font-size:14p
 @media(max-width:860px){.two,.gr,.fcg,.stps,.pz,.lv{grid-template-columns:1fr}.stps.v div{grid-template-columns:56px 1fr}.tp2{grid-template-columns:1fr}.tp2 i{display:none}.fcg .cd{aspect-ratio:4/5}.ph2 h1{font-size:clamp(32px,9.2vw,62px)}.wh{width:min(340px,86vw)}}
 @media(max-width:520px){.dept,.pg4,.mc4,.shop4,.earn,.lv{grid-template-columns:1fr 1fr}}
 .ph2{height:auto;min-height:max(86vh,620px)}.ph2 .wrap{padding-top:clamp(120px,17vh,180px)}.ph2 h1{font-size:clamp(34px,6.2vw,100px);line-height:1}.ac2 .ph2 h1{font-size:clamp(36px,4.8vw,80px)}@media(max-width:860px){.ph2 h1{font-size:clamp(32px,9vw,60px)}}
-</style></head><body><header class="nav"><a class="lg" href="index.html" aria-label="Mega Rewards home"><img class="lgo" alt="Mega Rewards"></a><div class="nr"><a class="mini" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><button id="mb" class="tx">Explore</button><a class="li" href="account.html#login">Log in</a><a class="jb" href="account.html">Join free</a></div></header><div id="menu"><div class="row"><span>01</span><a href="giveaways.html"><b>Win</b></a><div class="sl"><a href="giveaways.html">Giveaways</a><a href="tipping.html">Tipping</a><a href="winners.html">Winners</a><a href="giveaways.html#spin">Mega Spin</a></div></div><div class="row"><span>02</span><a href="store.html"><b>Save</b></a><div class="sl"><a href="store.html">Store</a><a href="store.html#catch">Mega Catch</a><a href="plus.html#how">How savings work</a></div></div><div class="row"><span>03</span><a href="plus.html"><b>Plus</b></a><div class="sl"><a href="plus.html#plans">Plans</a><a href="plus.html#calc">Calculator</a><a href="plus.html#faq">FAQ</a></div></div><div class="row"><span>04</span><a href="rewards.html"><b>Rewards</b></a><div class="sl"><a href="rewards.html">Points</a><a href="rewards.html#missions">Missions</a><a href="rewards.html#shop">Points shop</a><a href="rewards.html#board">Leaderboard</a></div></div><div class="row"><span>05</span><a href="community.html"><b>Community</b></a><div class="sl"><a href="community.html">Partners</a><a href="community.html#moments">Mega Moments</a><a href="partner.html">Partner with us</a></div></div></div><header class="ph2"><div class="bg"><img data-p="1679391029864-d46f366a456b" alt=""></div><div class="wrap"><p class="eb">Community · 7 partners and counting</p><h1><span class="ln"><i>Our community</i></span><span class="ln"><i class="it">partners.</i></span></h1><p class="hs">Mega Rewards connects you with leading Australian brands to deliver exclusive offers, premium discounts and subscriber-only promotions.</p><div class="hx" style="margin-top:26px"><a class="jb" href="partner.html">Become a partner</a></div></div></header>
+
+/* ===== Responsive nav: hamburger + account actions (<=860px). Desktop untouched. ===== */
+.hb{display:none;width:44px;height:44px;position:relative;flex:none;margin-right:-10px;border-radius:50%;-webkit-tap-highlight-color:transparent}
+.hb i{position:absolute;left:11px;right:11px;height:2px;border-radius:2px;background:currentColor;transition:transform .5s cubic-bezier(.7,0,.2,1),top .5s cubic-bezier(.7,0,.2,1),background .4s}
+.hb i:first-child{top:18px}.hb i:last-child{top:25px}
+body.mo .hb i:first-child{top:21.5px;transform:rotate(45deg)}body.mo .hb i:last-child{top:21.5px;transform:rotate(-45deg)}
+.mact{display:none}.xp{display:none}
+@media(max-width:860px){
+.nr{gap:8px}
+.nr .tx,.nr .li,.nr .jb,.nr .mini{display:none!important}
+.hb{display:block;order:3}
+body.mo .nav,body.mo .nav.solid{background:transparent;color:#fff;box-shadow:none;padding-block:18px}
+body.mo .nav.solid .me{background:rgba(255,255,255,.16);color:#fff}
+#menu{justify-content:flex-start;padding-top:96px;padding-bottom:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+#menu .row{grid-template-columns:44px 1fr 44px;align-items:center;row-gap:0;padding:12px 0}
+#menu .row>span{grid-column:1;grid-row:1}#menu .row>a{grid-column:2;grid-row:1}
+#menu .sl{grid-column:2/4;grid-row:2;display:none;padding:10px 0 6px;gap:8px 20px;justify-content:flex-start}
+#menu .row.open .sl{display:flex}
+#menu .sl a{opacity:.8;font-size:15px}
+.xp{display:block;grid-column:3;grid-row:1;width:44px;height:44px;position:relative;justify-self:end}
+.xp:before,.xp:after{content:'';position:absolute;left:14px;right:14px;top:21px;height:2px;border-radius:2px;background:#fff;opacity:.7;transition:transform .35s}
+.xp:after{transform:rotate(90deg)}.row.open .xp:after{transform:rotate(0)}
+.mact{display:grid;gap:12px;margin-top:auto;position:sticky;bottom:0;background:var(--k);padding:22px 0 max(22px,env(safe-area-inset-bottom))}
+.mact .mc{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;border-radius:99px;box-shadow:inset 0 0 0 1.5px #333;font-size:14px;font-weight:600}
+.mact .mc u{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--r);animation:pl 1.4s infinite;text-decoration:none}
+#menu .mact .mc b{font-family:var(--b);font-weight:600;font-size:15px;letter-spacing:0;line-height:1.2;min-width:68px;opacity:1;font-variant-numeric:tabular-nums}#menu .mact .mc span{opacity:.7;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.mact .mbtn{display:block;text-align:center;padding:16px;border-radius:99px;font-weight:600;font-size:16px;box-shadow:inset 0 0 0 1.5px #555;color:#fff;background:none;width:100%}
+.mact .mbtn.pri{background:var(--y);color:var(--k);box-shadow:none}
+.late .mact .mc u{animation-duration:.5s}
+}
+@media(hover:none){#menu:hover .row{opacity:1}}
+
+/* ===== Logged-in profile dropdown ===== */
+.mw{position:relative;display:inline-flex}
+.me[aria-haspopup]{cursor:pointer}
+.me .cv{width:7px;height:7px;margin:0 2px 3px 0;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);opacity:.7;transition:transform .3s}
+.me[aria-expanded=true] .cv{transform:rotate(225deg) translate(-2px,-2px)}
+.pd{position:absolute;top:calc(100% + 14px);right:0;width:272px;z-index:90;background:var(--k);color:#fff;border-radius:16px;padding:8px;box-shadow:0 24px 60px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.1);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.98);transform-origin:top right;transition:opacity .25s,transform .35s cubic-bezier(.2,.7,.2,1),visibility 0s .25s}
+.pd.on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.pd .ph{display:flex;gap:12px;align-items:center;padding:12px 12px 14px;margin-bottom:6px;border-bottom:1px solid #2a2a2a}
+.pd .ph i{width:40px;height:40px;flex:none;border-radius:50%;background:var(--y);color:var(--k);display:grid;place-items:center;font-style:normal;font-weight:700}
+.pd .ph div{min-width:0}
+.pd .ph b{display:block;font-weight:600;font-size:15px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pd .ph small{display:block;font-size:12px;opacity:.6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pd .pi{display:flex;align-items:center;width:100%;min-height:44px;padding:11px 12px;border-radius:10px;font-size:15px;font-weight:500;text-align:left;color:#fff;background:none;transition:background .2s}
+.pd .pi:hover,.pd .pi:focus-visible{background:rgba(255,255,255,.1);outline:0}
+.pd .sep{height:1px;margin:6px 4px;background:#2a2a2a}
+@media(max-width:860px){
+.me .cv{display:none}
+.pd{position:fixed;top:68px;right:max(12px,var(--gut));width:min(300px,calc(100vw - 24px))}
+.pd .pi{min-height:48px}
+}
+</style></head><body><header class="nav"><a class="lg" href="index.html" aria-label="Mega Rewards home"><img class="lgo" alt="Mega Rewards"></a><div class="nr"><a class="mini" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><button id="mb" class="tx">Explore</button><button id="hb" class="hb" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button><a class="li" href="account.html#login">Log in</a><a class="jb" href="account.html">Join free</a></div></header><div id="menu"><div class="row"><span>01</span><a href="giveaways.html"><b>Win</b></a><div class="sl"><a href="giveaways.html">Giveaways</a><a href="tipping.html">Tipping</a><a href="winners.html">Winners</a><a href="giveaways.html#spin">Mega Spin</a></div></div><div class="row"><span>02</span><a href="store.html"><b>Save</b></a><div class="sl"><a href="store.html">Store</a><a href="store.html#catch">Mega Catch</a><a href="plus.html#how">How savings work</a></div></div><div class="row"><span>03</span><a href="plus.html"><b>Plus</b></a><div class="sl"><a href="plus.html#plans">Plans</a><a href="plus.html#calc">Calculator</a><a href="plus.html#faq">FAQ</a></div></div><div class="row"><span>04</span><a href="rewards.html"><b>Rewards</b></a><div class="sl"><a href="rewards.html">Points</a><a href="rewards.html#missions">Missions</a><a href="rewards.html#shop">Points shop</a><a href="rewards.html#board">Leaderboard</a></div></div><div class="row"><span>05</span><a href="community.html"><b>Community</b></a><div class="sl"><a href="community.html">Partners</a><a href="community.html#moments">Mega Moments</a><a href="partner.html">Partner with us</a></div></div><div class="mact"><a class="mc" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><a class="mbtn" id="mLi" href="account.html#login">Log in</a><a class="mbtn pri" id="mJo" href="account.html">Join free</a></div></div><header class="ph2"><div class="bg"><img data-p="1679391029864-d46f366a456b" alt=""></div><div class="wrap"><p class="eb">Community · 7 partners and counting</p><h1><span class="ln"><i>Our community</i></span><span class="ln"><i class="it">partners.</i></span></h1><p class="hs">Mega Rewards connects you with leading Australian brands to deliver exclusive offers, premium discounts and subscriber-only promotions.</p><div class="hx" style="margin-top:26px"><a class="jb" href="partner.html">Become a partner</a></div></div></header>
 <section class="sec wrap"><div class="th2"><div><p class="eb">Partners</p><h2>Brands you already love.</h2></div></div><div class="chips rv" id="pc" style="margin-bottom:36px"><button class="chip on" data-c="all">All</button><button class="chip" data-c="football">Football</button><button class="chip" data-c="motorsport">Motorsport</button><button class="chip" data-c="basketball">Basketball</button><button class="chip" data-c="finance">Finance</button></div><div class="gr" id="pt"></div></section>
 <section class="dk2" id="moments"><div class="wrap sec" style="padding-bottom:40px"><div class="th2"><div><p class="eb">Mega Moments</p><h2>34 moments. Hover to watch.</h2></div><div class="chips"><span class="chip" style="cursor:default">Instagram</span><span class="chip" style="cursor:default">TikTok</span><span class="chip" style="cursor:default">Facebook</span></div></div></div><div class="trk" id="mv" style="padding-bottom:20px"></div><div class="ar" style="color:#fff"><button id="pv" aria-label="Previous" style="box-shadow:inset 0 0 0 1.5px #fff">←</button><button id="nx" aria-label="Next" style="box-shadow:inset 0 0 0 1.5px #fff">→</button></div><div style="height:clamp(60px,8vw,110px)"></div></section>
 <section class="sec wrap"><div class="two"><div class="rv"><p class="eb">Winner stories</p><h2 class="big">Real people. Real handovers.</h2></div><div class="rv"><p style="opacity:.7;max-width:44ch;margin-bottom:26px">Every experience our partners provide ends with a real winner and a real handover. See who took them home.</p><a class="jb" href="winners.html">Meet the winners</a></div></div></section>
@@ -288,4 +340,40 @@ const MV=[['Cam Waters and Thomas Randle jumped on the Mega Rewards sims and set
 $('#mv').innerHTML=MV.map(m=>`<a class="mv" href="#"><img src="${U(m[1],600)}" alt=""><span class="pl3">▶</span><p>${m[0]}</p></a>`).join('');
 $('#pv').onclick=()=>$('#mv').scrollBy({left:-$('#mv').clientWidth*.5,behavior:'smooth'});$('#nx').onclick=()=>$('#mv').scrollBy({left:$('#mv').clientWidth*.5,behavior:'smooth'});
 
-imgs();ST();</script></body></html>
+imgs();ST();</script><script>
+(function(){const mb=document.getElementById('mb'),hb=document.getElementById('hb'),mn=document.getElementById('menu');if(!mb||!hb||!mn)return;
+const isOpen=()=>mb.textContent.trim()==='Close';
+let dd=()=>{};
+function sync(){const o=isOpen();document.body.classList.toggle('mo',o);hb.setAttribute('aria-expanded',o);hb.setAttribute('aria-label',o?'Close menu':'Open menu')}
+new MutationObserver(sync).observe(mb,{childList:true,characterData:true,subtree:true});
+hb.addEventListener('click',()=>{dd(false);mb.click()});
+mb.addEventListener('click',()=>dd(false));
+mn.addEventListener('click',e=>{if(e.target.closest('a')&&isOpen())mb.click()});
+mn.querySelectorAll('.row').forEach(r=>{if(!r.querySelector('.sl'))return;const t=r.querySelector('a b').textContent;const x=document.createElement('button');x.type='button';x.className='xp';x.setAttribute('aria-expanded','false');x.setAttribute('aria-label','Show '+t+' links');x.onclick=()=>{const o=r.classList.toggle('open');x.setAttribute('aria-expanded',o)};r.appendChild(x)});
+const here=(location.pathname.split('/').pop()||'index.html');
+function goProfile(h){const t=document.querySelector('#settings');if(!t)return false;const y=t.getBoundingClientRect().top+scrollY-64;try{if(typeof lenis!=='undefined'&&lenis&&lenis.scrollTo)lenis.scrollTo(y,{duration:1.1});else scrollTo({top:y,behavior:'smooth'})}catch(_){scrollTo(0,y)}if(h==='#edit')setTimeout(()=>{const n=document.getElementById('nm2');if(n)n.focus({preventScroll:true})},750);return true}
+if(document.querySelector('main.pp')&&/^#(edit|settings)$/.test(location.hash)){let n=0;const iv=setInterval(()=>{if(document.getElementById('settings')||++n>40){clearInterval(iv);setTimeout(()=>goProfile(location.hash),500)}},100)}
+let user=null;try{if(typeof MR!=='undefined')user=MR.user()}catch(_){}
+const out=()=>{MR.logout();location.href='index.html'};
+const chip=document.querySelector('.nr .me');
+if(user){
+ const j=document.getElementById('mJo');j.textContent='Log out';j.href='index.html';j.onclick=e=>{e.preventDefault();out()};document.getElementById('mLi').classList.add('pri');j.classList.remove('pri');
+ if(chip){
+  const w=document.createElement('span');w.className='mw';chip.parentNode.insertBefore(w,chip);w.appendChild(chip);
+  const cv=document.createElement('em');cv.className='cv';chip.appendChild(cv);
+  chip.setAttribute('role','button');chip.setAttribute('aria-haspopup','menu');chip.setAttribute('aria-expanded','false');
+  const pd=document.createElement('div');pd.className='pd';pd.setAttribute('role','menu');pd.setAttribute('aria-label','Account');
+  const ph=document.createElement('div');ph.className='ph';const av=document.createElement('i');av.textContent=(user.name||'?')[0].toUpperCase();const dv=document.createElement('div');const nb=document.createElement('b');nb.textContent=user.name||'';const sm=document.createElement('small');sm.textContent=user.email||'';dv.append(nb,sm);ph.append(av,dv);pd.append(ph);
+  [['My profile','profile.html'],['Edit profile','profile.html#edit'],['Account settings','profile.html#settings']].forEach(([t,h])=>{const a=document.createElement('a');a.className='pi';a.setAttribute('role','menuitem');a.href=h;a.textContent=t;a.addEventListener('click',e=>{dd(false);if(here==='profile.html'&&h.indexOf('#')>-1&&goProfile(h.slice(h.indexOf('#')))){e.preventDefault();history.replaceState(null,'',h)}});pd.append(a)});
+  const sp=document.createElement('div');sp.className='sep';pd.append(sp);
+  const lo=document.createElement('button');lo.type='button';lo.className='pi';lo.setAttribute('role','menuitem');lo.textContent='Log out';lo.onclick=out;pd.append(lo);
+  w.append(pd);
+  dd=o=>{pd.classList.toggle('on',o);chip.setAttribute('aria-expanded',o)};
+  chip.addEventListener('click',e=>{e.preventDefault();const will=!pd.classList.contains('on');if(will&&isOpen())mb.click();dd(will)});
+  document.addEventListener('click',e=>{if(!w.contains(e.target))dd(false)});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&pd.classList.contains('on')){dd(false);chip.focus()}});
+ }
+}
+addEventListener('keydown',e=>{if(e.key==='Escape'&&isOpen())mb.click()});
+})();
+</script></body></html>
