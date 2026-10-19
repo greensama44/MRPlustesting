@@ -17,7 +17,6 @@ const PAGE_LABELS = {
 const MAX_UPLOAD_BYTES = 4 * 1024 * 1024;
 const ALLOWED_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'video/mp4', 'video/webm']);
 const state = {
-  email: '',
   revision: 0,
   replacements: {},
   pending: {},
@@ -41,10 +40,21 @@ function formatBytes(bytes) {
 
 async function request(url, options = {}) {
   const response = await fetch(url, { credentials: 'same-origin', ...options });
-  let body = {};
-  try { body = await response.json(); } catch {}
+  return readApiResponse(response);
+}
+
+async function readApiResponse(response) {
+  let body;
+  try {
+    body = await response.json();
+  } catch {
+    throw new Error('The Media Manager API is unavailable. Run the site with Vercel Functions (vercel dev) or deploy it to Vercel; a static-file server cannot load or save media.');
+  }
   if (!response.ok) {
-    const error = new Error(body.error || `Request failed (${response.status})`);
+    const message = response.status === 405
+      ? 'The server rejected this request (405). The Media Manager API is not enabled on this server. Run the site with Vercel Functions (vercel dev) or deploy the API files to Vercel.'
+      : body.error || `Request failed (${response.status})`;
+    const error = new Error(message);
     error.status = response.status;
     throw error;
   }
@@ -56,22 +66,6 @@ function showNotice(message, error = false) {
   box.textContent = message;
   box.classList.toggle('error', error);
   box.hidden = false;
-}
-
-function setLoginError(message) {
-  const box = $('#login-error');
-  box.textContent = message;
-  box.hidden = !message;
-}
-
-function showLogin() {
-  $('#login-view').hidden = false;
-  $('#manager-view').hidden = true;
-}
-
-function showManager() {
-  $('#login-view').hidden = true;
-  $('#manager-view').hidden = false;
 }
 
 function currentUrl(id) {
@@ -327,9 +321,7 @@ async function uploadFile(file, item = null) {
       },
       body: file
     });
-    let body = {};
-    try { body = await response.json(); } catch {}
-    if (!response.ok) throw new Error(body.error || `Upload failed (${response.status})`);
+    const body = await readApiResponse(response);
     state.library.unshift(body.asset);
     state.revision = body.revision;
     if (item) setPending(item.id, body.asset.url);
@@ -355,31 +347,6 @@ async function loadState() {
   renderLibrary();
   updatePendingLabel();
 }
-
-async function startManager() {
-  const result = await request('/api/media-admin-session');
-  state.email = result.email;
-  showManager();
-  await loadState();
-}
-
-$('#login-form').addEventListener('submit', async (event) => {
-  event.preventDefault();
-  setLoginError('');
-  const loginForm = event.currentTarget;
-  const form = new FormData(loginForm);
-  try {
-    await request('/api/media-admin-session', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ email: form.get('email'), password: form.get('password') })
-    });
-    loginForm.reset();
-    await startManager();
-  } catch (error) {
-    setLoginError(error.message);
-  }
-});
 
 $('#page-filter').addEventListener('change', renderAssets);
 $('#save-button').addEventListener('click', async () => {
@@ -420,20 +387,6 @@ $('#library-upload').addEventListener('change', (event) => {
   event.currentTarget.value = '';
 });
 
-$('#logout-button').addEventListener('click', async () => {
-  try {
-    await request('/api/media-admin-session', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ action: 'logout' })
-    });
-    state.pending = {};
-    showLogin();
-  } catch (error) {
-    showNotice(error.message, true);
-  }
-});
-
 document.querySelectorAll('[data-preview-mode]').forEach((button) => {
   button.addEventListener('click', () => {
     state.previewMode = button.dataset.previewMode;
@@ -442,11 +395,6 @@ document.querySelectorAll('[data-preview-mode]').forEach((button) => {
   });
 });
 
-startManager().catch((error) => {
-  if (error.status === 401) {
-    showLogin();
-    return;
-  }
-  showLogin();
-  setLoginError(error.message);
+loadState().catch((error) => {
+  showNotice(error.message, true);
 });

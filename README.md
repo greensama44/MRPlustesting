@@ -36,29 +36,10 @@ Anything registered through the Join form is a real account in the database.
 ## Website Media Manager
 Open `/admin/media.html` on the deployed site (or through `vercel dev`) to review the image references actually used by the root website pages. The catalog covers the 25 distinct Unsplash photo IDs found in the 11 media-bearing pages, including images generated dynamically by the storefront, community and winner lists; it does not treat the unreferenced `MR Imagery` and archived `version` folders as live media. There are currently no video elements on the root public pages.
 
-Configure these server-side Vercel environment variables before signing in:
+The media manager is intentionally public and does not require an administrator login. Anyone who can access `/admin/media.html` can view the media library, upload files, and save replacements that appear on the public website. Do not use this mode for a site where media changes must be restricted.
 
-- `MEDIA_ADMIN_EMAIL`: the one administrator email allowed to use the manager.
-- `MEDIA_ADMIN_PASSWORD_HASH`: an scrypt password hash in `scrypt$<32 hex chars>$<128 hex chars>` format.
-- `MEDIA_ADMIN_SESSION_SECRET`: a separate random secret of at least 32 characters, used to sign the manager's eight-hour HttpOnly session cookie.
-- `BLOB_READ_WRITE_TOKEN`: the existing private Vercel Blob store token. It stores both the media configuration and private uploads; no storage credentials are sent to the browser.
+The manager still needs the existing `BLOB_READ_WRITE_TOKEN` configured on Vercel to store media mappings and uploads. Storage credentials remain server-side. The manager accepts JPG, PNG, WebP, MP4 and WebM uploads up to 4 MB; direct HTTPS video URLs are also supported. A replacement is applied across every occurrence of its photo ID, matching the page/location list in the manager.
 
-Generate the password hash locally with Node.js and a strong password (do not reuse a member demo password):
+Typing a URL, selecting a library item, or uploading a file only creates a pending replacement. Use **Preview on page** to see pending media in the existing public page at desktop or mobile width, then select **Save Changes** to publish the media mapping. **Discard** restores the current saved choices. Uploaded library files remain reusable if pending mappings are discarded. Media mappings and library metadata are stored separately from member records in the private Blob store. Revision checks detect stale editor tabs; use one editor at a time because Blob storage does not provide atomic compare-and-swap writes.
 
-```powershell
-$secure = Read-Host "Media manager password" -AsSecureString
-$bstr = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secure)
-try {
-  $env:MR_MEDIA_PASSWORD = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($bstr)
-  node --input-type=module -e 'import crypto from "node:crypto"; const salt=crypto.randomBytes(16); crypto.scrypt(process.env.MR_MEDIA_PASSWORD,salt,64,(err,key)=>{if(err) throw err; console.log("scrypt$"+salt.toString("hex")+"$"+key.toString("hex"));});'
-} finally {
-  Remove-Item Env:MR_MEDIA_PASSWORD -ErrorAction SilentlyContinue
-  [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($bstr)
-}
-```
-
-Set the printed value as `MEDIA_ADMIN_PASSWORD_HASH` and use a different random value for `MEDIA_ADMIN_SESSION_SECRET`. Do not put real values in source control. The manager accepts JPG, PNG, WebP, MP4 and WebM uploads up to 4 MB; direct HTTPS video URLs are also supported. Uploads are private and only served to the administrator until a saved replacement references them. A replacement is applied across every occurrence of its photo ID, matching the page/location list in the manager.
-
-Typing a URL, selecting a library item, or uploading a file only creates a pending replacement. Use **Preview on page** to see pending media in the existing public page at desktop or mobile width, then select **Save Changes** to publish the media mapping. **Discard** restores the current saved choices. Uploaded library files remain reusable if pending mappings are discarded. Media mappings and library metadata are stored separately from member records in the private Blob store. Revision checks detect stale editor tabs; use one admin editor at a time because Blob storage does not provide atomic compare-and-swap writes.
-
-The APIs require the Vercel runtime and configured Blob storage; opening the HTML files directly with `file://` will not provide authentication, uploads, or persistent saving.
+The APIs require the Vercel runtime and configured Blob storage; opening the HTML files directly with `file://` will not provide uploads or persistent saving.

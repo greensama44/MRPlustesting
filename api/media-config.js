@@ -1,6 +1,5 @@
 import { json, wrap } from './_lib.js';
 import {
-  adminEmail,
   parseJson,
   readMediaState,
   requireSameOrigin,
@@ -10,9 +9,6 @@ import {
 
 export default wrap(async (request) => {
   if (request.method === 'GET') {
-    if (new URL(request.url).searchParams.get('manage') === '1') {
-      if (!adminEmail(request)) return json({ error: 'Admin login required' }, 401);
-    }
     const state = await readMediaState();
     if (new URL(request.url).searchParams.get('manage') === '1') return json(state);
     const mediaTypes = {};
@@ -26,7 +22,6 @@ export default wrap(async (request) => {
   if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
   const originError = requireSameOrigin(request);
   if (originError) return originError;
-  if (!adminEmail(request)) return json({ error: 'Admin login required' }, 401);
   const body = await parseJson(request);
   const state = await readMediaState();
   if (!Number.isInteger(body.revision) || body.revision !== state.revision) {

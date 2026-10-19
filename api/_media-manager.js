@@ -1,71 +1,10 @@
-import crypto from 'node:crypto';
 import { del, get, put } from '@vercel/blob';
 import { json, read, write } from './_lib.js';
 import { mediaCatalog } from '../media-catalog.js';
 
 export const MEDIA_STATE_PATH = 'media/manager.json';
 export const MAX_MEDIA_BYTES = 4 * 1024 * 1024;
-const COOKIE = 'mr_media_admin';
 const emptyState = () => ({ revision: 0, replacements: {}, library: [] });
-
-function adminSettings() {
-  const email = process.env.MEDIA_ADMIN_EMAIL || '';
-  const passwordHash = process.env.MEDIA_ADMIN_PASSWORD_HASH || '';
-  const sessionSecret = process.env.MEDIA_ADMIN_SESSION_SECRET || '';
-  if (!/^\S+@\S+\.\S+$/.test(email) || email.length > 160) {
-    throw Object.assign(new Error('Server is not configured (MEDIA_ADMIN_EMAIL is invalid)'), { status: 503 });
-  }
-  const match = /^scrypt\$([a-f0-9]{32})\$([a-f0-9]{128})$/i.exec(passwordHash);
-  if (!match) {
-    throw Object.assign(new Error('Server is not configured (MEDIA_ADMIN_PASSWORD_HASH is invalid)'), { status: 503 });
-  }
-  if (sessionSecret.length < 32) {
-    throw Object.assign(new Error('Server is not configured (MEDIA_ADMIN_SESSION_SECRET must be at least 32 characters)'), { status: 503 });
-  }
-  return {
-    email: email.trim().toLowerCase(),
-    salt: Buffer.from(match[1], 'hex'),
-    hash: Buffer.from(match[2], 'hex'),
-    sessionSecret
-  };
-}
-
-function sign(payload, secret) {
-  return crypto.createHmac('sha256', secret).update(payload).digest('base64url');
-}
-
-function requestIsSecure(request) {
-  const url = new URL(request.url);
-  return url.protocol === 'https:' || !['localhost', '127.0.0.1', '[::1]'].includes(url.hostname);
-}
-
-export function adminEmail(request) {
-  const match = (request.headers.get('cookie') || '').match(new RegExp(`(?:^|;\\s*)${COOKIE}=([^;]+)`));
-  if (!match) return null;
-  const [payload, signature] = match[1].split('.');
-  if (!payload || !signature) return null;
-  try {
-    const settings = adminSettings();
-    const expected = sign(payload, settings.sessionSecret);
-    if (signature.length !== expected.length || !crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expected))) return null;
-    const session = JSON.parse(Buffer.from(payload, 'base64url').toString());
-    return session.email === settings.email && session.exp > Date.now() ? settings.email : null;
-  } catch {
-    return null;
-  }
-}
-
-export function adminCookie(email, request) {
-  const settings = adminSettings();
-  const payload = Buffer.from(JSON.stringify({ email, exp: Date.now() + 8 * 60 * 60 * 1000 })).toString('base64url');
-  const secure = requestIsSecure(request) ? 'Secure; ' : '';
-  return `${COOKIE}=${payload}.${sign(payload, settings.sessionSecret)}; Path=/; HttpOnly; ${secure}SameSite=Strict; Max-Age=28800`;
-}
-
-export function clearAdminCookie(request) {
-  const secure = requestIsSecure(request) ? 'Secure; ' : '';
-  return `${COOKIE}=; Path=/; HttpOnly; ${secure}SameSite=Strict; Max-Age=0`;
-}
 
 export function requireSameOrigin(request) {
   const origin = request.headers.get('origin');
@@ -89,15 +28,6 @@ export async function parseJson(request) {
   } catch {
     throw Object.assign(new Error('Request body must be valid JSON'), { status: 400 });
   }
-}
-
-export async function checkAdminPassword(password) {
-  if (typeof password !== 'string' || password.length < 12 || password.length > 256) return false;
-  const settings = adminSettings();
-  const derived = await new Promise((resolve, reject) => {
-    crypto.scrypt(password, settings.salt, 64, (error, key) => error ? reject(error) : resolve(key));
-  });
-  return crypto.timingSafeEqual(derived, settings.hash);
 }
 
 export async function readMediaState() {

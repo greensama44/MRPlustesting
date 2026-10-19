@@ -11,25 +11,11 @@
   <link rel="stylesheet" href="media-admin.css">
 </head>
 <body>
-  <main id="login-view" class="login-shell">
-    <form id="login-form" class="login-card">
-      <a class="brand" href="../index.html"><span class="brand-mark">MR</span> MEGA REWARDS</a>
-      <p class="eyebrow">Website administration</p>
-      <h1>Media Manager</h1>
-      <p class="muted">Sign in with your configured media administrator account.</p>
-      <label>Email<input name="email" type="email" autocomplete="username" required></label>
-      <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
-      <p id="login-error" class="notice error" role="alert" hidden></p>
-      <button class="button primary wide" type="submit">Sign in</button>
-    </form>
-  </main>
-
-  <div id="manager-view" hidden>
+  <div id="manager-view">
     <header class="topbar">
       <a class="brand" href="../index.html"><span class="brand-mark">MR</span> MEGA REWARDS</a>
       <div class="top-actions">
         <a href="../index.html">View website</a>
-        <button id="logout-button" class="button subtle" type="button">Sign out</button>
       </div>
     </header>
     <main class="manager">
@@ -46,6 +32,7 @@
           <button id="save-button" class="button primary" type="button" disabled>Save Changes</button>
         </div>
       </section>
+      <p class="notice error" role="alert">Public media editor: anyone who can access this page can change the website's media.</p>
       <p id="manager-notice" class="notice" role="status" hidden></p>
 
       <section class="toolbar" aria-label="Media filters">
@@ -80,7 +67,7 @@
             <input id="library-upload" type="file" accept="image/jpeg,image/png,image/webp,video/mp4,video/webm">
           </label>
         </div>
-        <p class="muted">JPG, PNG, WebP, MP4 and WebM; maximum 4 MB per upload. Uploaded files stay private until used by a saved website replacement.</p>
+        <p class="muted">JPG, PNG, WebP, MP4 and WebM; maximum 4 MB per upload. Uploaded files are publicly accessible; they appear on the website only after you save a replacement.</p>
         <div id="library-list" class="library-list"></div>
       </section>
 

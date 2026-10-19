@@ -1,7 +1,6 @@
 import crypto from 'node:crypto';
 import { json, wrap } from './_lib.js';
 import {
-  adminEmail,
   deleteUploadedMedia,
   MAX_MEDIA_BYTES,
   readMediaState,
@@ -37,7 +36,6 @@ export default wrap(async (request) => {
   if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
   const originError = requireSameOrigin(request);
   if (originError) return originError;
-  if (!adminEmail(request)) return json({ error: 'Admin login required' }, 401);
   const declaredLength = Number(request.headers.get('content-length') || 0);
   if (declaredLength > MAX_MEDIA_BYTES) return json({ error: 'Uploads must be 4 MB or smaller' }, 413);
 
