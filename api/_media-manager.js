@@ -31,6 +31,9 @@ export async function parseJson(request) {
 }
 
 export async function readMediaState() {
+  if (process.env.MR_STORE !== 'memory' && !process.env.BLOB_READ_WRITE_TOKEN) {
+    throw Object.assign(new Error('Server is not configured (BLOB_READ_WRITE_TOKEN is missing)'), { status: 503 });
+  }
   return (await read(MEDIA_STATE_PATH)) || emptyState();
 }
 
