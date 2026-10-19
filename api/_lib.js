@@ -84,7 +84,9 @@ export function cleanDoc(doc, rec) {
   d.id = rec.id; d.upd = Date.now();
   return d;
 }
-export const wrap = (fn) => async (request) => {
-  try { return await fn(request); }
-  catch (e) { return json({ error: e.status && e.status < 500 || e.status === 503 ? e.message : 'Something went wrong. Please try again.' }, e.status || 500); }
-};
+export const wrap = (fn) => ({
+  fetch: async (request) => {
+    try { return await fn(request); }
+    catch (e) { return json({ error: e.status && e.status < 500 || e.status === 503 ? e.message : 'Something went wrong. Please try again.' }, e.status || 500); }
+  }
+});
