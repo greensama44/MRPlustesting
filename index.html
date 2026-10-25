@@ -223,20 +223,29 @@ a,button{touch-action:manipulation}
 @media(hover:none),(max-width:860px){.tg2 button:before,.pwt:before,#rs:before{content:'';position:absolute;inset:-10px -10px}}
 @media(max-width:860px){#menu .sl{gap:0 20px;padding:4px 0 2px}#menu .sl a{padding:8px 0}}
 @media(prefers-reduced-motion:reduce){*,:before,:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* On now: live giveaways in the homepage carousel */
+.car{margin-top:clamp(24px,4vw,60px)}.car .cd{flex-basis:min(78vw,420px)}
+.car .cd div{right:22px}
+.car .cd b{font-size:clamp(24px,2.2vw,30px);line-height:1.1}
+.car .cd .tg3{position:absolute;top:18px;left:18px;margin:0;z-index:2}
+.car .cd .ondt{position:absolute;top:18px;right:18px;z-index:2;background:var(--k);color:#fff;font-size:12px;font-weight:600;padding:6px 10px;border-radius:99px;font-variant-numeric:tabular-nums}
+.car .cd .ondt.hot{background:var(--r)}
+.car .cd .jb{border:0}.car .cd .jb.done{opacity:.6}
+.car .cd.all{background:var(--k);display:flex;align-items:flex-end}.car .cd.all:after{display:none}
+.car .cd.all div{position:static;padding:26px}.car .cd.all b{font-size:clamp(56px,6vw,96px);letter-spacing:-.05em;line-height:1}
+.car .cd.all small{display:block;font-size:16px;margin:8px 0 18px;opacity:.75}.car .cd.all span{font-weight:600;border-bottom:2px solid var(--y)}
+.him{background:#0b0b0b url("MR%20Imagery/853003811_1424238512509017_4393273105882773969_n.jpeg") center/cover no-repeat}
 </style></head><body>
 <header class="nav"><a class="lg" href="#hero" aria-label="Mega Rewards home"><img class="lgo" src="MR%20Imagery/Logo/MRplus%20logo.png" alt="Mega Rewards"></a><div class="nr"><a class="mini" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><button id="mb" class="tx">Explore</button><button id="hb" class="hb" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button><a class="li" href="account.html#login">Log in</a><a class="jb" href="account.html">Join free</a></div></header>
 <div id="menu"><div class="row"><span>01</span><a href="giveaways.html"><b>Win</b></a><div class="sl"><a href="giveaways.html">Giveaways</a><a href="tipping.html">Tipping</a><a href="winners.html">Winners</a><a href="giveaways.html#spin">Mega Spin</a></div></div><div class="row"><span>02</span><a href="store.html"><b>Save</b></a><div class="sl"><a href="store.html">Store</a><a href="store.html#catch">Mega Catch</a><a href="plus.html#how">How savings work</a></div></div><div class="row"><span>03</span><a href="plus.html"><b>Plus</b></a><div class="sl"><a href="plus.html#plans">Plans</a><a href="plus.html#calc">Calculator</a><a href="plus.html#faq">FAQ</a></div></div><div class="row"><span>04</span><a href="rewards.html"><b>Rewards</b></a><div class="sl"><a href="rewards.html">Points</a><a href="rewards.html#missions">Missions</a><a href="rewards.html#shop">Points shop</a><a href="rewards.html#board">Leaderboard</a></div></div><div class="row"><span>05</span><a href="community.html"><b>Community</b></a><div class="sl"><a href="community.html">Partners</a><a href="community.html#moments">Mega Moments</a><a href="partner.html">Partner with us</a><a href="account.html#login">Log in</a></div></div><div class="mact"><a class="mc" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><a class="mbtn" id="mLi" href="account.html#login">Log in</a><a class="mbtn pri" id="mJo" href="account.html">Join free</a></div></div>
 
-<section class="hero" id="hero"><div class="him"><iframe src="https://www.youtube.com/embed/uyDNTJbs0oM?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=uyDNTJbs0oM&amp;controls=0&amp;disablekb=1&amp;fs=0&amp;playsinline=1&amp;rel=0" title="Stadium crowd under lights" allow="autoplay; encrypted-media" tabindex="-1"></iframe></div>
+<section class="hero" id="hero"><div class="him"><iframe src="https://www.youtube.com/embed/uyDNTJbs0oM?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=uyDNTJbs0oM&amp;controls=0&amp;disablekb=1&amp;fs=0&amp;playsinline=1&amp;rel=0" title="Mega Rewards hero video" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" loading="eager" tabindex="-1"></iframe></div>
 <div class="ht wrap"><p class="eb">Plus from $19.99 a month</p><h1><span class="ln"><i>Save more.</i></span><span class="ln"><i>Experience more.</i></span><span class="ln"><i class="it">Enjoy more.</i></span></h1><p class="hs">6,000+ discounts. Free giveaways every week. Join in 60 seconds.</p><div class="cdw"><small id="cL">Next draw · Mega Daily · $1,000 · 6pm Adelaide</small><div class="dg"><span><b id="cH">--</b><em>Hrs</em></span><span><b id="cM">--</b><em>Min</em></span><span><b id="cS">--</b><em>Sec</em></span><a class="jb" href="account.html">Enter free</a></div></div></div><div class="cue">(Scroll)</div></section>
 
-<section class="st wrap"><p class="eb">Mega Rewards</p><p class="big" data-w>Win free prizes. Save on everything you buy. Level up every time you play.</p></section>
-<div class="car"><div class="trk" id="trk">
-<a class="cd" href="giveaways.html"><img src="MR%20Imagery/imgi_19_816156914_18149424064531058_5733850366501496747_n.jpg" alt=""><div><b>Giveaways</b><small>Free to enter</small></div></a>
-<a class="cd" href="tipping.html"><img src="MR%20Imagery/834876140_1061479960095584_1057156666856647934_n.jpeg" alt=""><div><b>Mega Tipping</b><small>$2,500 major prize</small></div></a>
-<a class="cd" href="store.html"><img src="MR%20Imagery/friends-shopping-second-hand-market.jpg" alt=""><div><b>Mega Savings</b><small>4–8% off gift cards</small></div></a>
-<a class="cd" href="community.html"><img src="MR%20Imagery/833915673_1921386252154014_2677604632070618207_n.jpeg" alt=""><div><b>Community</b><small>Clubs and brands</small></div></a></div>
-<div class="ar"><button id="pv" aria-label="Previous">←</button><button id="nx" aria-label="Next">→</button></div></div>
+<section class="st wrap" id="on-now"><p class="eb" id="onc">On now</p><p class="big" data-w>This week's giveaways. Free to enter, real to win.</p></section>
+<div class="car"><div class="trk" id="trk"></div>
+<div class="ar"><button id="pv" aria-label="Previous giveaways">←</button><button id="nx" aria-label="More giveaways">→</button></div></div>
 
 <section class="px" id="win"><div class="bg"><img src="MR%20Imagery/840498749_1450062827018239_2714104745984328353_n.jpeg" alt="Confetti celebration"></div><div class="pt"><p class="eb">01 · Giveaways and tipping</p><h2>Win</h2><p class="it">Free to enter. Real to win.</p></div></section>
 <div class="sec wrap">
@@ -246,7 +255,7 @@ a,button{touch-action:manipulation}
 
 <section class="px" id="save"><div class="bg"><img src="MR%20Imagery/woman-choosing-earphones-store.jpg" alt="Shopping bag"></div><div class="pt"><p class="eb">02 · Store and savings</p><h2>Save</h2><p class="it">The same stuff. Less money.</p></div></section>
 <div class="sec wrap">
-<div class="sr"><div class="sm"><img src="MR%20Imagery/friends-shopping-second-hand-market.jpg" alt=""></div><div class="sx"><h3>4–8%</h3><h4>Off gift cards</h4><p>Groceries, fuel, retail and dining. Buy at a discount, spend at full value.</p><a href="store.html">Shop gift cards</a></div></div>
+<div class="sr"><div class="sm"><img src="MR%20Imagery/pexels-sinan-kriya-2162662325-39629724.jpg" alt=""></div><div class="sx"><h3>4–8%</h3><h4>Off gift cards</h4><p>Groceries, fuel, retail and dining. Buy at a discount, spend at full value.</p><a href="store.html">Shop gift cards</a></div></div>
 <div class="sr rev"><div class="sm"><img src="MR%20Imagery/portrait-handsome-happy-guy-freelancer-working-listening-music-wireless-headphones.jpg" alt=""></div><div class="sx"><h3><span data-to="23" data-pre="$">$23</span></h3><h4>A month, mobile plans</h4><p>Keep your number. Ported in under a day.</p><a href="plus.html">Compare plans</a></div></div>
 </div>
 <section class="cs" id="calc"><div class="bg"><img src="MR%20Imagery/woman-choosing-earphones-store.jpg" alt=""></div><div class="wrap">
@@ -371,7 +380,24 @@ MR.nav();
 addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;if(!seen){x=tx;y=ty;seen=true;c.style.opacity=1}c.classList.toggle('big',!!e.target.closest('a,button,[data-cur],summary,label,input,textarea,select'))});document.documentElement.addEventListener('mouseleave',()=>c.style.opacity=0);
 (function f(){x+=(tx-x)*.2;y+=(ty-y)*.2;c.style.transform=`translate(${x}px,${y}px) translate(-50%,-50%)`;requestAnimationFrame(f)})()})();
 </script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="giveaways-data.js"></script><script>
+(function(){const trk=document.getElementById('trk');if(!trk||!window.MRG)return;
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const inn=n=>!!(window.MR&&MR.entered&&MR.entered(n));
+const days=g=>Math.max(0,Math.ceil((Date.parse(g.draw)-Date.now())/864e5));
+function draw(){const O=MRG.open(),total=MRG.all().filter(g=>MRG.state(g)!=='done').length;
+ document.getElementById('onc').textContent='On now · '+O.length+' open draws';
+ trk.innerHTML=O.map(g=>{const d=g.daily?0:days(g),hot=g.daily||d<=3;
+  const when=g.daily?'<b data-cd>--:--:--</b>':d===0?'Today':d===1?'Tomorrow':d+' days';
+  const act=inn(g.name)?'<span class="jb done">Entered ✓</span>':`<span class="jb" data-g="${esc(g.name)}">Enter free</span>`;
+  return `<a class="cd" href="giveaways.html"><img src="${MRG.img(g,1000)}" alt="" loading="lazy"><span class="tg3">${esc(g.type)}</span><span class="ondt${hot?' hot':''}">${when}</span><div><b>${esc(g.name)}</b><small>${esc(g.prize)}</small><p class="dl">${g.daily?'Drawn daily at 6pm Adelaide time':'Draws '+MRG.date(g)}</p>${act}</div></a>`}).join('')
+  +`<a class="cd all" href="giveaways.html"><div><b>${total}</b><small>giveaways live or opening soon</small><span>See all giveaways</span></div></a>`;
+ const wh=trk.querySelector('.ondt b[data-cd]');if(wh)wh.style.font='inherit'}
+trk.addEventListener('click',e=>{const b=e.target.closest('[data-g]');if(!b)return;e.preventDefault();const g=MRG.all().find(x=>x.name===b.dataset.g);if(!g)return;
+ if(!window.MR||!MR.user()){location.href='account.html?next='+encodeURIComponent('index.html#on-now');return}
+ const tk=MR.enter({id:g.name,t:g.name,k:g.type,c:g.cat});if(tk){MR.nav();b.textContent=`Entered ✓ · ${tk} ticket${tk>1?'s':''}`;setTimeout(draw,1800)}});
+draw()})();
+</script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],rm=matchMedia('(prefers-reduced-motion: reduce)').matches,fm=v=>'$'+Math.round(v).toLocaleString('en-US');
 $$('img[data-p]').forEach(i=>{if(i.getBoundingClientRect().top>innerHeight*1.5)i.loading='lazy';i.decoding='async';i.src=`https://images.unsplash.com/photo-${i.dataset.p}?auto=format&fit=crop&q=75&w=${innerWidth>900?1800:1100}`});
