@@ -245,7 +245,8 @@ a,button{touch-action:manipulation}
 .car .cd{border-radius:0;container-type:inline-size;--pc:#000;--a1:#e10600;--a2:#530e07}
 .car .cd.g1{--pc:#e10600;--a1:#000;--a2:#530e07}
 .car .cd:after{display:none}
-.car .cd img{object-position:50% 28%}
+/* the photo fills only the area above the solid panel, cropped to its focal point */
+.car .cd img{position:absolute;top:0;left:0;width:100%;height:calc(100% - 100cqw/9*5);object-fit:cover;object-position:var(--fp,50% 45%);transform-origin:var(--fp,50% 45%)}
 .car .cd .cpx{position:absolute;inset:0;left:0;right:0;bottom:0;z-index:1;pointer-events:none}
 .cpx:before{content:'';position:absolute;left:0;right:0;bottom:0;height:calc(100cqw/9*5);background:var(--pc)}
 .cpx i{position:absolute;width:calc(100cqw/9);height:calc(100cqw/9);left:calc(var(--cx)*100cqw/9);bottom:calc(var(--cy)*100cqw/9);background:var(--pc)}
@@ -477,7 +478,7 @@ function draw(){const O=MRG.open(),total=MRG.all().filter(g=>MRG.state(g)!=='don
  trk.innerHTML=O.map((g,i)=>{const d=g.daily?0:days(g),hot=g.daily||d<=3;
   const when=g.daily?'<b data-cd>--:--:--</b>':d===0?'Today':d===1?'Tomorrow':d+' days';
   const act=inn(g.name)?'<span class="jb done">Entered ✓</span>':`<span class="jb" data-g="${esc(g.name)}">Enter free</span>`;
-  return `<a class="cd g${i%2}" href="giveaways.html"><img src="${MRG.img(g,1000)}" alt="" loading="lazy"><div class="cpx" aria-hidden="true">${STAIR}</div><span class="tg3">${esc(g.type)}</span><span class="ondt${hot?' hot':''}">${when}</span><div class="ctx"><em class="lbl">${esc(g.type)} giveaway</em><b>${esc(g.name)}</b><small>${esc(g.prize)}</small><p class="dl">${g.daily?'Drawn daily · 6pm Adelaide':'Draws '+MRG.date(g)}</p>${act}</div></a>`}).join('')
+  return `<a class="cd g${i%2}" href="giveaways.html"><img src="${MRG.img(g,1000,694)}" alt="" loading="lazy" style="--fp:${esc(g.focus||'50% 45%')}"><div class="cpx" aria-hidden="true">${STAIR}</div><span class="tg3">${esc(g.type)}</span><span class="ondt${hot?' hot':''}">${when}</span><div class="ctx"><em class="lbl">${esc(g.type)} giveaway</em><b>${esc(g.name)}</b><small>${esc(g.prize)}</small><p class="dl">${g.daily?'Drawn daily · 6pm Adelaide':'Draws '+MRG.date(g)}</p>${act}</div></a>`}).join('')
   +`<a class="cd all" href="giveaways.html"><div class="cpx" aria-hidden="true">${ALLSTAIR}</div><div class="ctx"><em class="lbl">All giveaways</em><b>${total}</b><small>Live or opening soon</small><span>See all giveaways</span></div></a>`;
  const wh=trk.querySelector('.ondt b[data-cd]');if(wh)wh.style.font='inherit'}
 trk.addEventListener('click',e=>{const b=e.target.closest('[data-g]');if(!b)return;e.preventDefault();const g=MRG.all().find(x=>x.name===b.dataset.g);if(!g)return;
