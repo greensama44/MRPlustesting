@@ -2,17 +2,18 @@
    Edit giveaways here only. Each draw has a fixed date (Adelaide time).
    status: 'open' | 'up' (upcoming) | 'done'. An open draw whose date has passed is shown as completed automatically.
    cat: 'every' (everyday savings) | 'motor' (motorsport) | 'basket' (basketball)
-   photo: your own picture in MR Imagery (used first). img: Unsplash id, used only if photo is missing. daily: true for a draw that runs every day at 6pm. */
+   photo: your own picture in MR Imagery (used first). img: Unsplash id, used only if photo is missing. daily: true for a draw that runs every day at 6pm.
+   focus: where the subject sits in your own photo, as 'x% y%' (e.g. '50% 40%'), so thumbnails crop to it. Unsplash photos crop to their subject automatically. */
 window.MR_GIVEAWAYS = [
-  { name: 'Mega Daily', photo: 'MR Imagery/imgi_19_816156914_18149424064531058_5733850366501496747_n.jpg', type: 'Cash', cat: 'every', prize: '10 × $100, every day', img: '1527269534026-c86f4009eace', status: 'open', daily: true, feature: true },
+  { name: 'Mega Daily', photo: 'MR Imagery/imgi_19_816156914_18149424064531058_5733850366501496747_n.jpg', focus: '50% 30%', type: 'Cash', cat: 'every', prize: '10 × $100, every day', img: '1527269534026-c86f4009eace', status: 'open', daily: true, feature: true },
   { name: 'Mega Friday: $500 Supercheap Auto voucher', type: 'Voucher', cat: 'every', prize: '$500 voucher', img: '1637640125496-31852f042a60' /* Unsplash: tools in a box, Isabela Kronemberger */, status: 'open', draw: '2026-10-30T18:00:00+10:30' },
   { name: 'Mega Fuel Upgrade', type: 'Voucher', cat: 'every', prize: '4 × $100 fuel vouchers', img: '1591179535738-0fe38055847b' /* Unsplash: refuelling, Wassim Chouak */, status: 'open', draw: '2026-11-03T18:00:00+10:30' },
   { name: 'Foot Locker Voucher Upgrade', type: 'Voucher', cat: 'every', prize: '2 × $250 vouchers', img: '1779675790163-25db8e43497e' /* Unsplash: sneaker wall, ola szkolda */, status: 'open', draw: '2026-11-08T18:00:00+10:30' },
   { name: 'Mega Grocery Saving', type: 'Voucher', cat: 'every', prize: '2 × $250 grocery vouchers', img: '1582803824122-f25becf36ad8' /* Unsplash: fresh produce, Markus Spiske */, status: 'open', draw: '2026-11-12T18:00:00+10:30' },
-  { name: 'Mega Shot for Cash', photo: 'MR Imagery/854695626_1347880257265112_1624326729454131293_n.jpeg', type: 'Cash', cat: 'basket', prize: 'Up to $50,000', img: '1545525201-e1a5a2a18293', status: 'open', draw: '2026-11-14T18:00:00+10:30', feature: true },
-  { name: 'Tickford Racing Experience, Super1000 Bathurst', photo: 'MR Imagery/841324273_2217837739101474_2294785622405291990_n.jpg', type: 'Experience', cat: 'motor', prize: 'Pit garage and tour', img: '1690984651796-6bbb102fbf30', status: 'open', draw: '2026-11-17T18:00:00+10:30' },
-  { name: 'VIP Game-Day Experience', photo: 'MR Imagery/837659076_864033240069937_3112578624994998920_n.jpeg', type: 'Experience', cat: 'basket', prize: '4 winners', img: '1629217855633-79a6925d6c47', status: 'open', draw: '2026-11-23T18:00:00+10:30', feature: true },
-  { name: 'bp Adelaide Grand Final Experience', photo: 'MR Imagery/840764178_1885415985961478_4658857856626210920_n.jpeg', type: 'Experience', cat: 'motor', prize: 'Track access for 2', img: '1690984651796-6bbb102fbf30', status: 'open', draw: '2026-11-30T18:00:00+10:30', feature: true },
+  { name: 'Mega Shot for Cash', photo: 'MR Imagery/854695626_1347880257265112_1624326729454131293_n.jpeg', focus: '52% 58%', type: 'Cash', cat: 'basket', prize: 'Up to $50,000', img: '1545525201-e1a5a2a18293', status: 'open', draw: '2026-11-14T18:00:00+10:30', feature: true },
+  { name: 'Tickford Racing Experience, Super1000 Bathurst', photo: 'MR Imagery/841324273_2217837739101474_2294785622405291990_n.jpg', focus: '50% 62%', type: 'Experience', cat: 'motor', prize: 'Pit garage and tour', img: '1690984651796-6bbb102fbf30', status: 'open', draw: '2026-11-17T18:00:00+10:30' },
+  { name: 'VIP Game-Day Experience', photo: 'MR Imagery/837659076_864033240069937_3112578624994998920_n.jpeg', focus: '50% 42%', type: 'Experience', cat: 'basket', prize: '4 winners', img: '1629217855633-79a6925d6c47', status: 'open', draw: '2026-11-23T18:00:00+10:30', feature: true },
+  { name: 'bp Adelaide Grand Final Experience', photo: 'MR Imagery/840764178_1885415985961478_4658857856626210920_n.jpeg', focus: '72% 50%', type: 'Experience', cat: 'motor', prize: 'Track access for 2', img: '1690984651796-6bbb102fbf30', status: 'open', draw: '2026-11-30T18:00:00+10:30', feature: true },
   { name: 'Experience Supercars at the Bathurst 1000', photo: 'MR Imagery/843606098_1627770142187074_2718068516275307701_n.jpeg', type: 'Experience', cat: 'motor', prize: '10 winners', img: '1557775692-91fa57f514a6', status: 'up', draw: '2026-12-09T18:00:00+10:30' },
   { name: 'NBL Finals Courtside Night', photo: 'MR Imagery/833945409_1853873659082122_5674459995087397811_n.jpeg', type: 'Experience', cat: 'basket', prize: 'Courtside for two', img: '1629217855633-79a6925d6c47', status: 'up', draw: '2026-12-24T18:00:00+10:30' },
   { name: 'Bendigo Blitz $500 daily prize', photo: 'MR Imagery/843884097_18636839272031851_9043428050451248141_n.jpg', type: 'Cash', cat: 'every', prize: '$500 daily prize', img: '1503266980949-bd30d04d0b7a', status: 'done', draw: '2026-10-17T18:00:00+10:30' }
@@ -34,7 +35,7 @@ window.MRG = (function () {
   const when = g => g.daily ? Date.now() : Date.parse(g.draw);
   const state = g => (g.status === 'open' && !g.daily && when(g) < Date.now()) ? 'done' : g.status;
   const by = s => L().filter(g => state(g) === s).sort((a, b) => when(a) - when(b));
-  const img = (g, w) => g.photo ? encodeURI(g.photo) : `https://images.unsplash.com/photo-${g.img}?auto=format&fit=crop&q=75&w=${w || 800}`;
+  const img = (g, w, h) => g.photo ? encodeURI(g.photo) : `https://images.unsplash.com/photo-${g.img}?auto=format&fit=crop&q=75&w=${w || 800}` + (h ? `&h=${h}&crop=faces,entropy` : '');
   const date = g => g.daily ? 'Drawn daily, 6pm' : new Date(g.draw).toLocaleDateString('en-AU', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Australia/Adelaide' });
   const left = g => {
     if (g.daily) return 'Today, 6pm';

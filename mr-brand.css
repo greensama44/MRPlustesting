@@ -46,7 +46,7 @@ html{scroll-padding-top:calc(84px + var(--tkh))}
 .cd.bt{border-radius:0;container-type:inline-size;--pc:#000;--a1:#e10600;--a2:#530e07}
 .cd.bt.g1{--pc:#e10600;--a1:#000;--a2:#530e07}
 .cd.bt:after{display:none}
-.cd.bt img{object-position:50% 28%}
+.cd.bt img{position:absolute;top:0;left:0;width:100%;height:calc(100% - 100cqw/9*5);object-fit:cover;object-position:50% 45%}
 .cd.bt .cpx{position:absolute;inset:0;z-index:1;pointer-events:none}
 .cd.bt .cpx:before{content:'';position:absolute;left:0;right:0;bottom:0;height:calc(100cqw/9*5);background:var(--pc)}
 .cd.bt .cpx i{position:absolute;width:calc(100cqw/9);height:calc(100cqw/9);left:calc(var(--cx)*100cqw/9);bottom:calc(var(--cy)*100cqw/9);background:var(--pc)}
