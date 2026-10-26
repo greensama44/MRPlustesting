@@ -26,7 +26,7 @@ h1,h2,h3,h4,.big,#pts,.pr,.lg,#menu b,.mq div,.cd b,.tr b,.nx b,.d{font-family:v
 .cd{flex:0 0 min(78vw,520px);scroll-snap-align:start;position:relative;aspect-ratio:4/5;border-radius:6px;overflow:hidden;color:#fff}.cd img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}.cd:hover img{transform:scale(1.07)}
 .cd:after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(0,0,0,.7))}.cd div{position:absolute;left:22px;bottom:20px;z-index:2}.cd b{display:block;font-size:30px;font-weight:500;letter-spacing:-.03em}.cd small{opacity:.8}
 .ar{display:flex;gap:10px;padding:22px var(--gut)}.ar button{width:54px;height:54px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--k);font-size:20px;transition:.3s}.ar button:hover{background:var(--k);color:#fff}
-.px{position:relative;height:100vh;overflow:hidden;background:#fff}.px .bg{position:absolute;inset:0}.px canvas{position:absolute;inset:0;width:100%;height:100%;z-index:4}
+.px{position:relative;height:100vh;overflow:hidden;background:#e10600}.px .bg{position:absolute;inset:0}.px canvas{position:absolute;inset:0;width:100%;height:100%;z-index:4}
 .pt{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;padding:0 var(--gut);color:var(--k)}.pt h2{font-weight:500;font-size:clamp(76px,18vw,300px);letter-spacing:-.05em;line-height:.88;margin-left:-.03em}.pt p:last-child{font-size:clamp(20px,2.4vw,34px);letter-spacing:-.02em;margin-top:18px;max-width:22ch}
 .sec{padding-block:clamp(80px,12vw,170px)}
 .sr{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(20px,3vw,48px);align-items:center;margin-bottom:clamp(70px,10vw,150px)}
@@ -236,8 +236,88 @@ a,button{touch-action:manipulation}
 .car .cd.all div{position:static;padding:26px}.car .cd.all b{font-size:clamp(56px,6vw,96px);letter-spacing:-.05em;line-height:1}
 .car .cd.all small{display:block;font-size:16px;margin:8px 0 18px;opacity:.75}.car .cd.all span{font-weight:600;border-bottom:2px solid var(--y)}
 .him{background:#0b0b0b url("MR%20Imagery/853003811_1424238512509017_4393273105882773969_n.jpeg") center/cover no-repeat}
+
+/* ===== CTAs: brand red ===== */
+.jb,.mact .mbtn.pri{background:#e10600;color:#fff;transition:background .25s,color .25s}
+.jb:hover,.mact .mbtn.pri:hover{background:#b80500;color:#fff}
+
+/* ===== Giveaway thumbnails: new MR Plus pixel look (On now carousel only) ===== */
+.car .cd{border-radius:0;container-type:inline-size;--pc:#000;--a1:#e10600;--a2:#530e07}
+.car .cd.g1{--pc:#e10600;--a1:#000;--a2:#530e07}
+.car .cd:after{display:none}
+.car .cd img{object-position:50% 28%}
+.car .cd .cpx{position:absolute;inset:0;left:0;right:0;bottom:0;z-index:1;pointer-events:none}
+.cpx:before{content:'';position:absolute;left:0;right:0;bottom:0;height:calc(100cqw/9*5);background:var(--pc)}
+.cpx i{position:absolute;width:calc(100cqw/9);height:calc(100cqw/9);left:calc(var(--cx)*100cqw/9);bottom:calc(var(--cy)*100cqw/9);background:var(--pc)}
+.cpx i.a{background:var(--a1)}.cpx i.b{background:var(--a2)}.cpx i.k{background:#000}
+.car .cd .ctx{left:7cqw;right:7cqw;bottom:6cqw;z-index:2;display:flex;flex-direction:column;align-items:flex-start}
+.car .cd .lbl{font-family:var(--b);font-style:italic;font-weight:600;text-transform:uppercase;font-size:clamp(11px,3cqw,13px);letter-spacing:.1em}
+.car .cd b{font-family:var(--h);font-weight:600;letter-spacing:-.03em;font-size:clamp(24px,7.2cqw,34px);line-height:1.05;margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.car .cd small{font-family:var(--b);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:1;margin-top:8px}
+.car .cd .dl{font-family:var(--b);font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;opacity:.75;margin-top:2px}
+.car .cd .jb{margin-top:12px}
+.car .cd.g1 .jb{background:#000}.car .cd.g1 .jb:hover{background:#fff;color:#000}
+.car .cd .tg3{border-radius:0;background:#fff;color:#000}
+.car .cd .ondt{border-radius:0;background:#000;font-weight:700}.car .cd .ondt.hot{background:#e10600}
+.car .cd.all{background:#e10600}.car .cd.all .cpx{position:absolute;padding:0}.car .cd.all .cpx:before{display:none}
+.car .cd.all .ctx{position:absolute;padding:0}
+.car .cd.all b{font-size:clamp(96px,36cqw,170px);line-height:.9;letter-spacing:-.05em;-webkit-line-clamp:unset}
+.car .cd.all small{font-size:14px;letter-spacing:.06em;margin:10px 0 20px}
+.car .cd.all span{border:0;font-weight:700;background:#000;color:#fff;padding:11px 22px;border-radius:99px}
+@media(max-width:700px){.car .cd .dl{display:none}}
+
+/* ===== Pixel blocks on site imagery (new MR Plus look) ===== */
+.pxs{position:absolute;inset:0;pointer-events:none;z-index:2;--u:clamp(26px,4.4vw,72px);overflow:hidden}
+.pxs i{position:absolute;width:var(--u);height:var(--u);background:#e10600}
+.pxs i.d{background:#530e07}.pxs i.k{background:#000}.pxs i.g{background:rgba(225,6,0,.55)}
+.pxs.pa-tr i{right:calc(var(--cx)*var(--u));top:calc(var(--cy)*var(--u))}.pxs.pa-tl i{left:calc(var(--cx)*var(--u));top:calc(var(--cy)*var(--u))}
+.pxs.pa-br i{right:calc(var(--cx)*var(--u));bottom:calc(var(--cy)*var(--u))}.pxs.pa-bl i{left:calc(var(--cx)*var(--u));bottom:calc(var(--cy)*var(--u))}
+.pxs.sm2{--u:clamp(22px,3vw,48px)}.pxs.sm3{--u:clamp(18px,2.2vw,34px)}
+.sm{position:relative}.qt{position:relative;overflow:hidden}.qt .wrap{position:relative;z-index:3}
+
+/* ===== Winners ticker: top bar above the nav, tucks away on scroll ===== */
+:root{--tkh:40px}
+.wtk{position:fixed;top:0;left:0;right:0;z-index:85;height:var(--tkh);display:flex;align-items:stretch;background:#e10600;color:#fff;font-size:14px;font-weight:500;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.nav{top:var(--tkh);transition:background .45s,color .45s,padding .45s,box-shadow .45s,top .45s cubic-bezier(.2,.7,.2,1)}
+body.scr .wtk,body.mo .wtk{transform:translateY(-100%)}body.scr .nav,body.mo .nav{top:0}
+.wlb{flex:none;display:flex;align-items:center;gap:10px;padding:0 20px 0 var(--gut);background:#000;font-weight:600;font-style:italic;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.wlb:before{content:'';width:9px;height:9px;background:#e10600;animation:pl 1.4s infinite}
+.wtr{flex:1;min-width:0;overflow:hidden;display:flex;align-items:center}
+.wtt{display:flex;white-space:nowrap;animation:wtk 40s linear infinite}.wtk:hover .wtt{animation-play-state:paused}
+.wtt span{display:inline-flex;align-items:center;gap:8px;padding:0 22px}.wtt b{font-weight:700}.wtt em{font-style:normal;opacity:.85}
+.wtt span:after{content:'';width:8px;height:8px;background:#530e07;margin-left:14px}
+.wsa{flex:none;display:flex;align-items:center;padding:0 var(--gut) 0 20px;background:#000;font-weight:600;font-size:13px;white-space:nowrap}.wsa:hover{text-decoration:underline}
+@keyframes wtk{to{transform:translateX(-50%)}}
+@media(max-width:860px){:root{--tkh:36px}.wtk{font-size:13px}.wsa{display:none}}
+@media(max-width:520px){.wlb{font-size:11px;padding-right:14px}}
+@media(prefers-reduced-motion:reduce){.wtr{overflow-x:auto}.wtt{animation:none}}
+html{scroll-padding-top:calc(84px + var(--tkh))}
+/* Hero: text always sits below the nav and ticker, on any window height */
+.hero{height:auto;min-height:100vh;display:flex;align-items:flex-end}
+.ht{position:relative;inset:auto;width:100%;padding-top:calc(var(--tkh) + 130px)}
+.hero h1{font-size:clamp(34px,min(6.2vw,10vh),104px)}
+@media(max-height:760px) and (min-width:861px){.hs{margin-top:14px}.cdw small{margin:20px 0 10px}.dg b{font-size:clamp(30px,6vh,48px)}}
+
+/* ===== Mega Rewards section colours: red #e10600, yellow #ffd800, black =====
+   Rhythm: photo hero > yellow On now > red pixel chapters > white stats > red winners quote
+   > dark calculator > white pricing > yellow points > red partners band > photo join > red next strip */
+/* On now: Mega yellow, so the black and red thumbnails pop */
+#on-now,.car{background:#ffd800}
+#on-now .eb{opacity:.75}
+.car{margin-top:0;padding-top:clamp(24px,4vw,60px)}.car .ar{padding-bottom:clamp(60px,8vw,110px)}
+.ar button{box-shadow:inset 0 0 0 1.5px #000}.ar button:hover{background:#000;color:#ffd800}
+/* Winners quote: Mega red, with black and dark-red blocks */
+.qt{background:#e10600}.qt small{opacity:.85}.qt .eb{opacity:.85}
+.qt .pxs i{background:#000}.qt .pxs i.d{background:#530e07}.qt .pxs i.g{background:rgba(0,0,0,.35)}
+/* Points and levels: Mega yellow */
+.rp{background:#ffd800;color:#000}.rp .bg{opacity:.1}
+#bar{background:rgba(0,0,0,.15)}#bar i{background:#e10600}.tr div{opacity:.45}
+/* Partners: red band */
+.mq{background:#e10600;color:#fff;border:0}
+/* Next strip */
+.nx{background:#e10600}
 </style></head><body>
-<header class="nav"><a class="lg" href="#hero" aria-label="Mega Rewards home"><img class="lgo" src="MR%20Imagery/Logo/mega-rewards.png" alt="Mega Rewards"></a><div class="nr"><a class="mini" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><button id="mb" class="tx">Explore</button><button id="hb" class="hb" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button><a class="li" href="account.html#login">Log in</a><a class="jb" href="account.html">Join free</a></div></header>
+<div class="wtk" aria-label="Recent winners"><span class="wlb">Just won</span><div class="wtr"><div class="wtt" id="wtt"></div></div><a class="wsa" href="winners.html">See all winners</a></div><header class="nav"><a class="lg" href="#hero" aria-label="Mega Rewards home"><img class="lgo" src="MR%20Imagery/Logo/mega-rewards.png" alt="Mega Rewards"></a><div class="nr"><a class="mini" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><button id="mb" class="tx">Explore</button><button id="hb" class="hb" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button><a class="li" href="account.html#login">Log in</a><a class="jb" href="account.html">Join free</a></div></header>
 <div id="menu"><div class="row"><span>01</span><a href="giveaways.html"><b>Win</b></a><div class="sl"><a href="giveaways.html">Giveaways</a><a href="tipping.html">Tipping</a><a href="winners.html">Winners</a><a href="giveaways.html#spin">Mega Spin</a></div></div><div class="row"><span>02</span><a href="store.html"><b>Save</b></a><div class="sl"><a href="store.html">Store</a><a href="store.html#catch">Mega Catch</a><a href="plus.html#how">How savings work</a></div></div><div class="row"><span>03</span><a href="plus.html"><b>Plus</b></a><div class="sl"><a href="plus.html#plans">Plans</a><a href="plus.html#calc">Calculator</a><a href="plus.html#faq">FAQ</a></div></div><div class="row"><span>04</span><a href="rewards.html"><b>Rewards</b></a><div class="sl"><a href="rewards.html">Points</a><a href="rewards.html#missions">Missions</a><a href="rewards.html#shop">Points shop</a><a href="rewards.html#board">Leaderboard</a></div></div><div class="row"><span>05</span><a href="community.html"><b>Community</b></a><div class="sl"><a href="community.html">Partners</a><a href="community.html#moments">Mega Moments</a><a href="partner.html">Partner with us</a><a href="account.html#login">Log in</a></div></div><div class="mact"><a class="mc" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><a class="mbtn" id="mLi" href="account.html#login">Log in</a><a class="mbtn pri" id="mJo" href="account.html">Join free</a></div></div>
 
 <section class="hero" id="hero"><div class="him"><iframe src="https://www.youtube.com/embed/uyDNTJbs0oM?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=uyDNTJbs0oM&amp;controls=0&amp;disablekb=1&amp;fs=0&amp;playsinline=1&amp;rel=0" title="Mega Rewards hero video" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" loading="eager" tabindex="-1"></iframe></div>
@@ -249,14 +329,14 @@ a,button{touch-action:manipulation}
 
 <section class="px" id="win"><div class="bg"><img src="MR%20Imagery/840498749_1450062827018239_2714104745984328353_n.jpeg" alt="Confetti celebration"></div><div class="pt"><p class="eb">01 · Giveaways and tipping</p><h2>Win</h2><p class="it">Free to enter. Real to win.</p></div></section>
 <div class="sec wrap">
-<div class="sr"><div class="sm"><img src="MR%20Imagery/733674062_1448628930638668_5801381516580186319_n%20(1).jpg" alt=""></div><div class="sx"><h3><span data-to="1000" data-pre="$">$1,000</span></h3><h4>Given away every day</h4><p>Ten subscribers win $100 each, drawn daily at 6pm. Every subscriber gets a ticket, free.</p><p class="cdl">Next draw in <b data-cd>--:--:--</b></p><a href="giveaways.html">See today's draw</a></div></div>
-<div class="sr rev"><div class="sm"><img src="MR%20Imagery/853003811_1424238512509017_4393273105882773969_n.jpeg" alt=""></div><div class="sx"><h3><span data-to="2500" data-pre="$">$2,500</span></h3><h4>Tip with your head or your heart</h4><p>Five sports, one account, free to play. Best record wins.</p><a href="tipping.html">Start tipping</a></div></div></div>
-<section class="qt"><div class="wrap"><p class="eb">Winners</p><p class="big" data-w>Big thanks to Mega Rewards for our big day out at the Adelaide Grand Final.</p><div class="by"><img class="av2" data-p="1562337404-3044c84ac061" alt="Kitty, competition winner (placeholder portrait)"><small>Kitty, competition winner</small></div></div></section>
+<div class="sr"><div class="sm"><img src="MR%20Imagery/733674062_1448628930638668_5801381516580186319_n%20(1).jpg" alt=""><div class="pxs pa-br sm2" data-p="0,0;1,0;2,0;3,0;0,1;1,1;2,1;0,2;1,2;0,3;4,0d;2,2d;0,4d;4,2;2,4;5,1g"></div></div><div class="sx"><h3><span data-to="1000" data-pre="$">$1,000</span></h3><h4>Given away every day</h4><p>Ten subscribers win $100 each, drawn daily at 6pm. Every subscriber gets a ticket, free.</p><p class="cdl">Next draw in <b data-cd>--:--:--</b></p><a href="giveaways.html">See today's draw</a></div></div>
+<div class="sr rev"><div class="sm"><img src="MR%20Imagery/853003811_1424238512509017_4393273105882773969_n.jpeg" alt=""><div class="pxs pa-bl sm2" data-p="0,0;1,0;2,0;3,0;0,1;1,1;2,1;0,2;1,2;0,3;4,0d;2,2d;0,4d;4,2;2,4;5,1g"></div></div><div class="sx"><h3><span data-to="2500" data-pre="$">$2,500</span></h3><h4>Tip with your head or your heart</h4><p>Five sports, one account, free to play. Best record wins.</p><a href="tipping.html">Start tipping</a></div></div></div>
+<section class="qt"><div class="pxs pa-tr" data-p="0,0;1,0;2,0;0,1;1,1;0,2;3,0d;1,2d;3,2;2,3g"></div><div class="wrap"><p class="eb">Winners</p><p class="big" data-w>Big thanks to Mega Rewards for our big day out at the Adelaide Grand Final.</p><div class="by"><img class="av2" data-p="1562337404-3044c84ac061" alt="Kitty, competition winner (placeholder portrait)"><small>Kitty, competition winner</small></div></div></section>
 
 <section class="px" id="save"><div class="bg"><img src="MR%20Imagery/woman-choosing-earphones-store.jpg" alt="Shopping bag"></div><div class="pt"><p class="eb">02 · Store and savings</p><h2>Save</h2><p class="it">The same stuff. Less money.</p></div></section>
 <div class="sec wrap">
-<div class="sr"><div class="sm"><img src="MR%20Imagery/pexels-sinan-kriya-2162662325-39629724.jpg" alt=""></div><div class="sx"><h3>4–8%</h3><h4>Off gift cards</h4><p>Groceries, fuel, retail and dining. Buy at a discount, spend at full value.</p><a href="store.html">Shop gift cards</a></div></div>
-<div class="sr rev"><div class="sm"><img src="MR%20Imagery/portrait-handsome-happy-guy-freelancer-working-listening-music-wireless-headphones.jpg" alt=""></div><div class="sx"><h3><span data-to="23" data-pre="$">$23</span></h3><h4>A month, mobile plans</h4><p>Keep your number. Ported in under a day.</p><a href="plus.html">Compare plans</a></div></div>
+<div class="sr"><div class="sm"><img src="MR%20Imagery/pexels-sinan-kriya-2162662325-39629724.jpg" alt=""><div class="pxs pa-br sm2" data-p="0,0;1,0;2,0;3,0;0,1;1,1;2,1;0,2;1,2;0,3;4,0d;2,2d;0,4d;4,2;2,4;5,1g"></div></div><div class="sx"><h3>4–8%</h3><h4>Off gift cards</h4><p>Groceries, fuel, retail and dining. Buy at a discount, spend at full value.</p><a href="store.html">Shop gift cards</a></div></div>
+<div class="sr rev"><div class="sm"><img src="MR%20Imagery/portrait-handsome-happy-guy-freelancer-working-listening-music-wireless-headphones.jpg" alt=""><div class="pxs pa-bl sm2" data-p="0,0;1,0;2,0;3,0;0,1;1,1;2,1;0,2;1,2;0,3;4,0d;2,2d;0,4d;4,2;2,4;5,1g"></div></div><div class="sx"><h3><span data-to="23" data-pre="$">$23</span></h3><h4>A month, mobile plans</h4><p>Keep your number. Ported in under a day.</p><a href="plus.html">Compare plans</a></div></div>
 </div>
 <section class="cs" id="calc"><div class="bg"><img src="MR%20Imagery/woman-choosing-earphones-store.jpg" alt=""></div><div class="wrap">
 <div class="cl rv"><p class="eb">Savings calculator</p><h2>Does Plus pay for itself?</h2><small class="lb" id="tl">Estimated yearly saving with Plus</small><div class="num" id="tot">$0</div><p class="sub">after the $239.88 yearly membership</p>
@@ -273,9 +353,9 @@ a,button{touch-action:manipulation}
 <section class="px" id="plus"><div class="bg"><img src="MR%20Imagery/758047751_1036898888753085_4919743506415938230_n.jpeg" alt="Family on a beach"></div><div class="pt"><p class="eb">03 · Membership</p><h2>Plus</h2><p class="it">Pick your level.</p></div></section>
 <div class="sec wrap" id="pricing"><div class="th2"><div><p class="eb">Plans and pricing</p><h2>Pick your level.</h2></div><div class="tg2" id="bt"><button class="on" data-b="m">Monthly</button><button data-b="a">Annual · save 15%</button></div></div>
 <div class="tiers2 rv">
-<div class="tl" tabindex="0"><img src="MR%20Imagery/834876140_1061479960095584_1057156666856647934_n.jpeg" alt=""><span class="tag">Start here</span><div class="in2"><h3>Free</h3><div class="pr">$0<small>/mo</small></div><div class="bl">No card. No catch.</div><div class="fl"><ul><li>6,000+ discounts to browse</li><li>1x ticket in every draw</li><li>Free Mega Tipping every round</li><li>1x points on everything</li></ul><a class="jb" href="account.html">Join free</a></div></div></div>
-<div class="tl hot on" tabindex="0"><img src="MR%20Imagery/833945409_1853873659082122_5674459995087397811_n.jpeg" alt=""><span class="tag">Most popular</span><div class="in2"><h3>Plus</h3><div class="pr"><span data-m="19.99" data-a="16.99">$19.99</span><small>/mo</small></div><div class="bl" data-m="Billed monthly, cancel anytime" data-a="Billed $203.90 a year">Billed monthly, cancel anytime</div><div class="fl"><ul><li>4–8% off gift cards</li><li>$23 mobile plans</li><li>2x tickets and 2x points</li><li>2-for-1 dining and activities</li></ul><a class="jb" href="account.html">Start free month</a></div></div></div>
-<div class="tl" tabindex="0"><img src="MR%20Imagery/839631542_1674934917334192_7342931846625911258_n.jpg" alt=""><span class="tag">Best for households</span><div class="in2"><h3>Mega</h3><div class="pr"><span data-m="49.99" data-a="42.49">$49.99</span><small>/mo</small></div><div class="bl" data-m="Up to 3 people, billed monthly" data-a="Up to 3 people, billed $509.90 a year">Up to 3 people, billed monthly</div><div class="fl"><ul><li>Everything in Plus, for the whole house</li><li>5x tickets and 5x points</li><li>$20 Mega Credit every month</li><li>$10,000 Mega-only monthly draw</li></ul><a class="jb" href="account.html">Start free month</a></div></div></div>
+<div class="tl" tabindex="0"><img src="MR%20Imagery/834876140_1061479960095584_1057156666856647934_n.jpeg" alt=""><div class="pxs pa-tr sm3" data-p="0,0;1,0;2,0;0,1;1,1;0,2;3,0d;1,2d;3,2;2,3g"></div><span class="tag">Start here</span><div class="in2"><h3>Free</h3><div class="pr">$0<small>/mo</small></div><div class="bl">No card. No catch.</div><div class="fl"><ul><li>6,000+ discounts to browse</li><li>1x ticket in every draw</li><li>Free Mega Tipping every round</li><li>1x points on everything</li></ul><a class="jb" href="account.html">Join free</a></div></div></div>
+<div class="tl hot on" tabindex="0"><img src="MR%20Imagery/833945409_1853873659082122_5674459995087397811_n.jpeg" alt=""><div class="pxs pa-tr sm3" data-p="0,0;1,0;2,0;0,1;1,1;0,2;3,0d;1,2d;3,2;2,3g"></div><span class="tag">Most popular</span><div class="in2"><h3>Plus</h3><div class="pr"><span data-m="19.99" data-a="16.99">$19.99</span><small>/mo</small></div><div class="bl" data-m="Billed monthly, cancel anytime" data-a="Billed $203.90 a year">Billed monthly, cancel anytime</div><div class="fl"><ul><li>4–8% off gift cards</li><li>$23 mobile plans</li><li>2x tickets and 2x points</li><li>2-for-1 dining and activities</li></ul><a class="jb" href="account.html">Start free month</a></div></div></div>
+<div class="tl" tabindex="0"><img src="MR%20Imagery/839631542_1674934917334192_7342931846625911258_n.jpg" alt=""><div class="pxs pa-tr sm3" data-p="0,0;1,0;2,0;0,1;1,1;0,2;3,0d;1,2d;3,2;2,3g"></div><span class="tag">Best for households</span><div class="in2"><h3>Mega</h3><div class="pr"><span data-m="49.99" data-a="42.49">$49.99</span><small>/mo</small></div><div class="bl" data-m="Up to 3 people, billed monthly" data-a="Up to 3 people, billed $509.90 a year">Up to 3 people, billed monthly</div><div class="fl"><ul><li>Everything in Plus, for the whole house</li><li>5x tickets and 5x points</li><li>$20 Mega Credit every month</li><li>$10,000 Mega-only monthly draw</li></ul><a class="jb" href="account.html">Start free month</a></div></div></div>
 </div></div>
 
 <section class="rp" id="rewards"><div class="bg"><img data-p="1610229452706-666ac2d49c45" alt=""></div><div class="in wrap"><p class="eb">04 · Points and levels</p><div id="pts">0</div><div id="bar"><i></i></div>
@@ -283,7 +363,7 @@ a,button{touch-action:manipulation}
 
 <section id="community" style="padding:clamp(70px,10vw,140px) 0 0"><p class="eb wrap">05 · Partners and clubs</p><div class="mq"><div id="mqi">Adelaide United · NBL · Supercars · Tasmania JackJumpers · bp Adelaide Grand Final · My Money House · Returnify · </div></div></section>
 
-<section class="end" id="join"><div class="bg"><img src="MR%20Imagery/843839585_1879549460077729_2187917494575672971_n.jpeg" alt=""></div><div class="c"><h2>Start unlocking<br><span class="it">Mega</span> value today</h2><p class="cdl2">Today's draw closes in <b data-cd>--:--:--</b></p><a class="jb" href="account.html">Join free</a><p style="margin-top:16px;opacity:.8">Free in 60 seconds. No card.</p></div></section>
+<section class="end" id="join"><div class="bg"><img src="MR%20Imagery/843839585_1879549460077729_2187917494575672971_n.jpeg" alt=""></div><div class="pxs pa-bl" data-p="0,0;1,0;2,0;3,0;4,0;0,1;1,1;2,1;3,1;0,2;1,2;2,2;0,3;1,3;0,4;5,0d;3,2d;1,4d;5,2;3,4;6,1g"></div><div class="pxs pa-tr" data-p="0,0;1,0;2,0;0,1;1,1;0,2;3,0d;1,2d;3,2;2,3g"></div><div class="c"><h2>Start unlocking<br><span class="it">Mega</span> value today</h2><p class="cdl2">Today's draw closes in <b data-cd>--:--:--</b></p><a class="jb" href="account.html">Join free</a><p style="margin-top:16px;opacity:.8">Free in 60 seconds. No card.</p></div></section>
 <a class="nx" href="giveaways.html"><span>Next<br><b>Giveaways</b></span><div><img src="MR%20Imagery/833915673_1921386252154014_2677604632070618207_n.jpeg" alt=""></div></a>
 <footer><a class="fl2" href="index.html" aria-label="Mega Rewards home"><img class="lgo" src="MR%20Imagery/Logo/mega-rewards.png" alt="Mega Rewards"></a><div class="f"><a href="giveaways.html">Win</a><a href="store.html">Save</a><a href="plus.html">Plus</a><a href="rewards.html">Rewards</a><a href="community.html">Community</a><a href="partner.html">Partner with us</a><a href="#">About</a><a href="#">Contact</a><a href="#">Terms</a><a href="#">Privacy</a></div>All promotions, offers and rewards are subject to the terms and conditions of participating partners. © 2026 Mega Rewards Pty Ltd. Photography: Unsplash.</footer>
 
@@ -380,23 +460,33 @@ MR.nav();
 addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;if(!seen){x=tx;y=ty;seen=true;c.style.opacity=1}c.classList.toggle('big',!!e.target.closest('a,button,[data-cur],summary,label,input,textarea,select'))});document.documentElement.addEventListener('mouseleave',()=>c.style.opacity=0);
 (function f(){x+=(tx-x)*.2;y+=(ty-y)*.2;c.style.transform=`translate(${x}px,${y}px) translate(-50%,-50%)`;requestAnimationFrame(f)})()})();
 </script>
+<script>/* pixel blocks: expand data-p="col,row[d|k|g];..." into squares */
+document.querySelectorAll('.pxs[data-p]').forEach(function(h){h.setAttribute('aria-hidden','true');h.dataset.p.split(';').forEach(function(t){var m=/^(\d+),(\d+)([a-z]?)$/.exec(t.trim());if(!m)return;var i=document.createElement('i');i.style.setProperty('--cx',m[1]);i.style.setProperty('--cy',m[2]);if(m[3])i.className=m[3];h.appendChild(i)})});
+</script>
 <script src="giveaways-data.js"></script><script>
 (function(){const trk=document.getElementById('trk');if(!trk||!window.MRG)return;
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const inn=n=>!!(window.MR&&MR.entered&&MR.entered(n));
 const days=g=>Math.max(0,Math.ceil((Date.parse(g.draw)-Date.now())/864e5));
+const px=a=>a.map(([x,y,c])=>`<i style="--cx:${x};--cy:${y}"${c?` class="${c}"`:''}></i>`).join('');
+/* pixel staircase above each thumbnail's solid panel (9 columns), accent squares on its edge */
+const STAIR=px([[0,5],[1,5],[2,5],[3,5],[0,6],[1,6],[0,7],[4,5,'b'],[2,6,'a'],[1,7,'b'],[0,8,'a']]);
+const ALLSTAIR=px([[8,10,'k'],[7,10,'k'],[6,10,'k'],[8,9,'k'],[7,9,'k'],[8,8,'k'],[5,9,'b'],[6,8,'b'],[7,7,'k'],[0,0,'b'],[1,1,'k']]);
 function draw(){const O=MRG.open(),total=MRG.all().filter(g=>MRG.state(g)!=='done').length;
  document.getElementById('onc').textContent='On now · '+O.length+' open draws';
- trk.innerHTML=O.map(g=>{const d=g.daily?0:days(g),hot=g.daily||d<=3;
+ trk.innerHTML=O.map((g,i)=>{const d=g.daily?0:days(g),hot=g.daily||d<=3;
   const when=g.daily?'<b data-cd>--:--:--</b>':d===0?'Today':d===1?'Tomorrow':d+' days';
   const act=inn(g.name)?'<span class="jb done">Entered ✓</span>':`<span class="jb" data-g="${esc(g.name)}">Enter free</span>`;
-  return `<a class="cd" href="giveaways.html"><img src="${MRG.img(g,1000)}" alt="" loading="lazy"><span class="tg3">${esc(g.type)}</span><span class="ondt${hot?' hot':''}">${when}</span><div><b>${esc(g.name)}</b><small>${esc(g.prize)}</small><p class="dl">${g.daily?'Drawn daily at 6pm Adelaide time':'Draws '+MRG.date(g)}</p>${act}</div></a>`}).join('')
-  +`<a class="cd all" href="giveaways.html"><div><b>${total}</b><small>giveaways live or opening soon</small><span>See all giveaways</span></div></a>`;
+  return `<a class="cd g${i%2}" href="giveaways.html"><img src="${MRG.img(g,1000)}" alt="" loading="lazy"><div class="cpx" aria-hidden="true">${STAIR}</div><span class="tg3">${esc(g.type)}</span><span class="ondt${hot?' hot':''}">${when}</span><div class="ctx"><em class="lbl">${esc(g.type)} giveaway</em><b>${esc(g.name)}</b><small>${esc(g.prize)}</small><p class="dl">${g.daily?'Drawn daily · 6pm Adelaide':'Draws '+MRG.date(g)}</p>${act}</div></a>`}).join('')
+  +`<a class="cd all" href="giveaways.html"><div class="cpx" aria-hidden="true">${ALLSTAIR}</div><div class="ctx"><em class="lbl">All giveaways</em><b>${total}</b><small>Live or opening soon</small><span>See all giveaways</span></div></a>`;
  const wh=trk.querySelector('.ondt b[data-cd]');if(wh)wh.style.font='inherit'}
 trk.addEventListener('click',e=>{const b=e.target.closest('[data-g]');if(!b)return;e.preventDefault();const g=MRG.all().find(x=>x.name===b.dataset.g);if(!g)return;
  if(!window.MR||!MR.user()){location.href='account.html?next='+encodeURIComponent('index.html#on-now');return}
  const tk=MR.enter({id:g.name,t:g.name,k:g.type,c:g.cat});if(tk){MR.nav();b.textContent=`Entered ✓ · ${tk} ticket${tk>1?'s':''}`;setTimeout(draw,1800)}});
 draw()})();
+(function(){const t=document.getElementById('wtt'),W=window.MR_WINNERS||[];if(!t||!W.length){const k=document.querySelector('.wtk');if(k)k.hidden=true;document.documentElement.style.setProperty('--tkh','0px');return}
+const esc=x=>String(x).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const one=W.map(w=>`<span><b>${esc(w.who)}</b> ${esc(w.won)} <em>· ${esc(w.where)}</em></span>`).join('');t.innerHTML=one+one;t.lastElementChild&&[...t.children].slice(W.length).forEach(e=>e.setAttribute('aria-hidden','true'))})();
 </script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],rm=matchMedia('(prefers-reduced-motion: reduce)').matches,fm=v=>'$'+Math.round(v).toLocaleString('en-US');
@@ -421,13 +511,13 @@ let l=18*3600-((g('hour')%24)*3600+g('minute')*60+g('second'));if(l<=0)l+=86400;
 $('#cH').textContent=z(H);$('#cM').textContent=z(M);const sE=$('#cS');sE.textContent=z(S);if(!rm){sE.classList.remove('t');void sE.offsetWidth;sE.classList.add('t')}
 $$('[data-cd]').forEach(e=>e.textContent=dr?'Drawing now':z(H)+':'+z(M)+':'+z(S));$('#cL').textContent=dr?'Drawing now · Mega Daily · winners announced shortly':'Next draw · Mega Daily · $1,000 · 6pm Adelaide';document.body.classList.toggle('late',!dr&&l<3600)}
 tick();setInterval(tick,1000);
-const nav=$('.nav'),navT=()=>nav.classList.toggle('solid',scrollY>innerHeight*.5);addEventListener('scroll',navT,{passive:true});navT();
+const nav=$('.nav'),navT=()=>{nav.classList.toggle('solid',scrollY>innerHeight*.5);document.body.classList.toggle('scr',scrollY>40)};addEventListener('scroll',navT,{passive:true});navT();
 if(!rm){
 gsap.registerPlugin(ScrollTrigger);const lenis=new Lenis();lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
 $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=$(a.getAttribute('href'));if(t&&a.getAttribute('href')!=='#'){e.preventDefault();closeM();lenis.scrollTo(t)}}));
 function mk(host,col,fixed){const c=document.createElement('canvas');host.appendChild(c);if(fixed)c.style.cssText='position:fixed;inset:0;width:100%;height:100%;z-index:200;pointer-events:none';const o={},x=c.getContext('2d');
 o.size=()=>{const w=innerWidth,h=innerHeight;c.width=w;c.height=h;o.T=Math.ceil(w/(w<700?7:14));o.n=Math.ceil(w/o.T);o.th=[];o.ac=[];for(let r=0;r<Math.ceil(h/o.T);r++)for(let q=0;q<o.n;q++){o.th.push(.62*Math.random()+.38*((q+r)/(o.n+Math.ceil(h/o.T))));o.ac.push(Math.random()>.94)}};
-o.draw=p=>{x.clearRect(0,0,c.width,c.height);if(p>=1){c.style.visibility='hidden';return}c.style.visibility='visible';o.th.forEach((t,i)=>{if(t>=p){x.fillStyle=o.ac[i]?'#e10600':col;x.fillRect((i%o.n)*o.T,Math.floor(i/o.n)*o.T,o.T+1,o.T+1)}})};o.size();addEventListener('resize',o.size);return o}
+o.draw=p=>{x.clearRect(0,0,c.width,c.height);if(p>=1){c.style.visibility='hidden';return}c.style.visibility='visible';o.th.forEach((t,i)=>{if(t>=p){x.fillStyle=o.ac[i]?(col==='#e10600'?'#530e07':'#e10600'):col;x.fillRect((i%o.n)*o.T,Math.floor(i/o.n)*o.T,o.T+1,o.T+1)}})};o.size();addEventListener('resize',o.size);return o}
 // intro curtain
 const cu=mk(document.body,'#0b0b0b',true),pr={p:0};gsap.set('.ln i',{yPercent:112});gsap.set('.hs,.hero .eb',{opacity:0,y:20});gsap.from('.him iframe',{scale:1.25,duration:2.6,ease:'power3.out'});
 gsap.to(pr,{p:1,duration:1.8,delay:.3,ease:'power2.inOut',onUpdate:()=>cu.draw(pr.p),onComplete:()=>gsap.to('.ln i',{yPercent:0,stagger:.12,duration:1.3,ease:'power4.out',onStart:()=>gsap.to('.hs,.hero .eb',{opacity:1,y:0,duration:1,delay:.4})})});
@@ -436,7 +526,7 @@ const mob=innerWidth<700;gsap.timeline({scrollTrigger:{trigger:'#hero',start:'to
 // word-by-word reveal
 $$('[data-w]').forEach(e=>{e.innerHTML=e.textContent.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');gsap.fromTo(e.querySelectorAll('.w'),{opacity:.14},{opacity:1,stagger:.12,ease:'none',scrollTrigger:{trigger:e,start:'top 78%',end:'bottom 48%',scrub:true}})});
 // chapter pixel reveals (pinned)
-$$('.px').forEach(s=>{const o=mk(s,'#ffffff'),t=s.querySelector('.pt'),im=s.querySelector('.bg img');gsap.timeline({scrollTrigger:{trigger:s,start:'top top',end:'+=140%',pin:true,scrub:.5,onUpdate:self=>o.draw(Math.min(1,self.progress*1.3))}}).fromTo(im,{scale:1.35},{scale:1,ease:'none'},0).fromTo(t,{y:60},{y:0,ease:'none'},0).to(t,{color:'#fff',ease:'none',duration:.25},.3)});
+$$('.px').forEach(s=>{const o=mk(s,'#e10600'),t=s.querySelector('.pt'),im=s.querySelector('.bg img');gsap.timeline({scrollTrigger:{trigger:s,start:'top top',end:'+=140%',pin:true,scrub:.5,onUpdate:self=>o.draw(Math.min(1,self.progress*1.3))}}).fromTo(im,{scale:1.35},{scale:1,ease:'none'},0).fromTo(t,{y:60},{y:0,ease:'none'},0).to(t,{color:'#fff',ease:'none',duration:.25},.3)});
 // stat rows: clip reveal, parallax, count-up
 $$('.sr').forEach(r=>{const m=r.querySelector('.sm'),im=m.querySelector('img'),n=r.querySelector('[data-to]');
 gsap.fromTo(m,{clipPath:'inset(100% 0 0 0)'},{clipPath:'inset(0% 0 0 0)',duration:1.4,ease:'power4.out',scrollTrigger:{trigger:r,start:'top 78%'}});

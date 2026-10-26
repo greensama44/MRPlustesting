@@ -1,0 +1,76 @@
+/* Mega Rewards brand layer for the inner pages. Matches the homepage:
+   red CTAs, a "Just won" ticker above the nav, pixel blocks on imagery,
+   branded giveaway thumbnails and Mega red / yellow sections.
+   Colours: red #e10600, dark red #530e07, yellow #ffd800, black. Fonts: the page's own (Geom Graphic / Montserrat). */
+
+/* ---------- CTAs ---------- */
+.jb,.mact .mbtn.pri{background:#e10600;color:#fff;transition:background .25s,color .25s}
+.jb:hover,.mact .mbtn.pri:hover{background:#b80500;color:#fff}
+
+/* ---------- Winners ticker: top bar above the nav, tucks away on scroll ---------- */
+:root{--tkh:0px}
+html.tk{--tkh:40px}
+.wtk{position:fixed;top:0;left:0;right:0;z-index:85;height:var(--tkh);display:flex;align-items:stretch;background:#e10600;color:#fff;font-size:14px;font-weight:500;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.nav{top:var(--tkh);transition:background .45s,color .45s,padding .45s,box-shadow .45s,top .45s cubic-bezier(.2,.7,.2,1)}
+body.scr .wtk,body.mo .wtk{transform:translateY(-100%)}body.scr .nav,body.mo .nav{top:0}
+.wlb{flex:none;display:flex;align-items:center;gap:10px;padding:0 20px 0 var(--gut);background:#000;font-weight:600;font-style:italic;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.wlb:before{content:'';width:9px;height:9px;background:#e10600;animation:pl 1.4s infinite}
+.wtr{flex:1;min-width:0;overflow:hidden;display:flex;align-items:center}
+.wtt{display:flex;white-space:nowrap;animation:wtk 40s linear infinite}.wtk:hover .wtt{animation-play-state:paused}
+.wtt span{display:inline-flex;align-items:center;gap:8px;padding:0 22px}.wtt b{font-weight:700}.wtt em{font-style:normal;opacity:.85}
+.wtt span:after{content:'';width:8px;height:8px;background:#530e07;margin-left:14px}
+.wsa{flex:none;display:flex;align-items:center;padding:0 var(--gut) 0 20px;background:#000;color:#fff;font-weight:600;font-size:13px;white-space:nowrap}.wsa:hover{text-decoration:underline}
+@keyframes wtk{to{transform:translateX(-50%)}}
+@media(max-width:860px){html.tk{--tkh:36px}.wtk{font-size:13px}.wsa{display:none}}
+@media(max-width:520px){.wlb{font-size:11px;padding-right:14px}}
+@media(prefers-reduced-motion:reduce){.wtr{overflow-x:auto}.wtt{animation:none}}
+html{scroll-padding-top:calc(84px + var(--tkh))}
+.sub2{top:calc(66px + var(--tkh))}body.scr .sub2{top:66px}
+
+/* ---------- Page heroes: text always clears the nav and ticker ---------- */
+.ph2 .wrap{padding-top:calc(clamp(120px,17vh,180px) + var(--tkh))}
+
+/* ---------- Pixel blocks on imagery ---------- */
+.pxs{position:absolute;inset:0;pointer-events:none;z-index:2;--u:clamp(26px,4.4vw,72px);overflow:hidden}
+.pxs i{position:absolute;width:var(--u);height:var(--u);background:#e10600}
+.pxs i.d{background:#530e07}.pxs i.k{background:#000}.pxs i.g{background:rgba(225,6,0,.55)}
+.pxs.pa-tr i{right:calc(var(--cx)*var(--u));top:calc(var(--cy)*var(--u))}.pxs.pa-tl i{left:calc(var(--cx)*var(--u));top:calc(var(--cy)*var(--u))}
+.pxs.pa-br i{right:calc(var(--cx)*var(--u));bottom:calc(var(--cy)*var(--u))}.pxs.pa-bl i{left:calc(var(--cx)*var(--u));bottom:calc(var(--cy)*var(--u))}
+.pxs.sm2{--u:clamp(22px,3vw,48px)}.pxs.sm3{--u:clamp(14px,1.8vw,28px)}
+.ph2 .pxs{z-index:1}.ph2 .wrap{z-index:2}
+.gc .im,.pc .im,.qc .im{position:relative}
+.ptc .pxs.pxs,.tl .pxs.pxs{position:absolute;inset:0;padding:0;z-index:2}
+.gc .im .tg3,.pc .im .tg3{z-index:3}
+
+/* ---------- Giveaway thumbnails (featured cards) ---------- */
+.cd.bt{border-radius:0;container-type:inline-size;--pc:#000;--a1:#e10600;--a2:#530e07}
+.cd.bt.g1{--pc:#e10600;--a1:#000;--a2:#530e07}
+.cd.bt:after{display:none}
+.cd.bt img{object-position:50% 28%}
+.cd.bt .cpx{position:absolute;inset:0;z-index:1;pointer-events:none}
+.cd.bt .cpx:before{content:'';position:absolute;left:0;right:0;bottom:0;height:calc(100cqw/9*5);background:var(--pc)}
+.cd.bt .cpx i{position:absolute;width:calc(100cqw/9);height:calc(100cqw/9);left:calc(var(--cx)*100cqw/9);bottom:calc(var(--cy)*100cqw/9);background:var(--pc)}
+.cd.bt .cpx i.a{background:var(--a1)}.cd.bt .cpx i.b{background:var(--a2)}
+.cd.bt .ctx{left:7cqw;right:7cqw;bottom:6cqw;z-index:2;display:flex;flex-direction:column;align-items:flex-start}
+.cd.bt>.tg3{position:absolute;top:18px;left:18px;margin:0;z-index:3;border-radius:0;background:#fff;color:#000}
+.cd.bt .lbl{font-family:var(--b);font-style:italic;font-weight:600;text-transform:uppercase;font-size:clamp(11px,3cqw,13px);letter-spacing:.1em}
+.cd.bt b{font-family:var(--h);font-weight:600;letter-spacing:-.03em;font-size:clamp(22px,7cqw,32px);line-height:1.05;margin-top:6px}
+.cd.bt small{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:1;margin-top:8px}
+.cd.bt .dl{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;opacity:.75;margin-top:2px}
+.cd.bt .jb{margin-top:12px}.cd.bt.g1 .jb{background:#000}.cd.bt.g1 .jb:hover{background:#fff;color:#000}
+
+/* ---------- Mega red and yellow sections ---------- */
+.dk2.mr-red{background:#e10600;--r:#000}
+.mr-red .eb{opacity:.85}
+.mr-red .jb{background:#000;color:#fff}.mr-red .jb:hover{background:#fff;color:#000}.mr-red .tg2 button.on,.mr-red .tabs button.on{border-color:#fff}
+.mr-red .pxs i{background:#000}.mr-red .pxs i.d{background:#530e07}.mr-red .pxs i.g{background:rgba(0,0,0,.35)}
+.mr-yel{background:#ffd800}
+.mr-yel .eb{opacity:.75}.mr-yel .tg2 button.on{border-color:#000}
+#grid.mr-yel>.sec{padding-top:clamp(60px,8vw,110px)!important}
+.nx{background:#e10600}
+
+/* Yellow accents on red sections read as white */
+.dk2.mr-red{--y:#fff}
+.mr-red .ls div.me{background:rgba(0,0,0,.18)}
+
+.mr-red .mi i{background:rgba(0,0,0,.22)}.mr-red .mi i:after{background:#fff}
