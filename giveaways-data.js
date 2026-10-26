@@ -5,10 +5,10 @@
    photo: your own picture in MR Imagery (used first). img: Unsplash id, used only if photo is missing. daily: true for a draw that runs every day at 6pm. */
 window.MR_GIVEAWAYS = [
   { name: 'Mega Daily', photo: 'MR Imagery/imgi_19_816156914_18149424064531058_5733850366501496747_n.jpg', type: 'Cash', cat: 'every', prize: '10 × $100, every day', img: '1527269534026-c86f4009eace', status: 'open', daily: true, feature: true },
-  { name: 'Mega Friday: $500 Supercheap Auto voucher', photo: 'MR Imagery/761414275_1997172991002570_5929900211432828186_n.jpeg', type: 'Voucher', cat: 'every', prize: '$500 voucher', img: '1560692830-04adc2f31119', status: 'open', draw: '2026-10-30T18:00:00+10:30' },
-  { name: 'Mega Fuel Upgrade', photo: 'MR Imagery/845535936_2217837819101466_7456127702276857981_n.jpg', type: 'Voucher', cat: 'every', prize: '4 × $100 fuel vouchers', img: '1557775692-91fa57f514a6', status: 'open', draw: '2026-11-03T18:00:00+10:30' },
-  { name: 'Foot Locker Voucher Upgrade', photo: 'MR Imagery/834876140_1061479960095584_1057156666856647934_n.jpeg', type: 'Voucher', cat: 'every', prize: '2 × $250 vouchers', img: '1610229452706-666ac2d49c45', status: 'open', draw: '2026-11-08T18:00:00+10:30' },
-  { name: 'Mega Grocery Saving', photo: 'MR Imagery/woman-choosing-earphones-store.jpg', type: 'Voucher', cat: 'every', prize: '2 × $250 grocery vouchers', img: '1561715276-a2d087060f1d', status: 'open', draw: '2026-11-12T18:00:00+10:30' },
+  { name: 'Mega Friday: $500 Supercheap Auto voucher', type: 'Voucher', cat: 'every', prize: '$500 voucher', img: '1637640125496-31852f042a60' /* Unsplash: tools in a box, Isabela Kronemberger */, status: 'open', draw: '2026-10-30T18:00:00+10:30' },
+  { name: 'Mega Fuel Upgrade', type: 'Voucher', cat: 'every', prize: '4 × $100 fuel vouchers', img: '1591179535738-0fe38055847b' /* Unsplash: refuelling, Wassim Chouak */, status: 'open', draw: '2026-11-03T18:00:00+10:30' },
+  { name: 'Foot Locker Voucher Upgrade', type: 'Voucher', cat: 'every', prize: '2 × $250 vouchers', img: '1779675790163-25db8e43497e' /* Unsplash: sneaker wall, ola szkolda */, status: 'open', draw: '2026-11-08T18:00:00+10:30' },
+  { name: 'Mega Grocery Saving', type: 'Voucher', cat: 'every', prize: '2 × $250 grocery vouchers', img: '1582803824122-f25becf36ad8' /* Unsplash: fresh produce, Markus Spiske */, status: 'open', draw: '2026-11-12T18:00:00+10:30' },
   { name: 'Mega Shot for Cash', photo: 'MR Imagery/854695626_1347880257265112_1624326729454131293_n.jpeg', type: 'Cash', cat: 'basket', prize: 'Up to $50,000', img: '1545525201-e1a5a2a18293', status: 'open', draw: '2026-11-14T18:00:00+10:30', feature: true },
   { name: 'Tickford Racing Experience, Super1000 Bathurst', photo: 'MR Imagery/841324273_2217837739101474_2294785622405291990_n.jpg', type: 'Experience', cat: 'motor', prize: 'Pit garage and tour', img: '1690984651796-6bbb102fbf30', status: 'open', draw: '2026-11-17T18:00:00+10:30' },
   { name: 'VIP Game-Day Experience', photo: 'MR Imagery/837659076_864033240069937_3112578624994998920_n.jpeg', type: 'Experience', cat: 'basket', prize: '4 winners', img: '1629217855633-79a6925d6c47', status: 'open', draw: '2026-11-23T18:00:00+10:30', feature: true },
@@ -16,6 +16,16 @@ window.MR_GIVEAWAYS = [
   { name: 'Experience Supercars at the Bathurst 1000', photo: 'MR Imagery/843606098_1627770142187074_2718068516275307701_n.jpeg', type: 'Experience', cat: 'motor', prize: '10 winners', img: '1557775692-91fa57f514a6', status: 'up', draw: '2026-12-09T18:00:00+10:30' },
   { name: 'NBL Finals Courtside Night', photo: 'MR Imagery/833945409_1853873659082122_5674459995087397811_n.jpeg', type: 'Experience', cat: 'basket', prize: 'Courtside for two', img: '1629217855633-79a6925d6c47', status: 'up', draw: '2026-12-24T18:00:00+10:30' },
   { name: 'Bendigo Blitz $500 daily prize', photo: 'MR Imagery/843884097_18636839272031851_9043428050451248141_n.jpg', type: 'Cash', cat: 'every', prize: '$500 daily prize', img: '1503266980949-bd30d04d0b7a', status: 'done', draw: '2026-10-17T18:00:00+10:30' }
+];
+
+/* Recent winners: the homepage "Just won" ticker reads this list. Real winners only, newest first.
+   who: name as the winner agreed to be shown. won: what they won. where: the giveaway or event. */
+window.MR_WINNERS = [
+  { who: 'Matt and Dylan', won: 'won a real race car ride', where: 'Supercars · Tickford Racing' },
+  { who: 'Allo', won: 'won the $500 daily prize', where: 'Bendigo Blitz 2026' },
+  { who: 'Logan', won: 'won the $500 daily prize', where: 'Bendigo Blitz 2026' },
+  { who: 'Four lucky lads', won: 'teed it up at Blitz golf', where: 'NBL Blitz' },
+  { who: 'Alun', won: 'won a trip with Adelaide United to play Melbourne Victory', where: 'Travel with the team' }
 ];
 
 /* Helpers shared by every page */
