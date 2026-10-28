@@ -317,7 +317,17 @@ html{scroll-padding-top:calc(84px + var(--tkh))}
 .mq{background:#e10600;color:#fff;border:0}
 /* Next strip */
 .nx{background:#e10600}
+
+/* ===== Intro: MEGA [giveaway photos] REWARDS, plays on every visit and reload ===== */
+.mri{position:fixed;inset:0;z-index:1000;background:#efeeeb;color:#0b0b0b;display:grid;place-items:center}
+.mri-row{display:flex;align-items:center;justify-content:center;font:600 clamp(30px,8.4vw,150px)/1 var(--h);letter-spacing:-.03em;text-transform:uppercase;white-space:nowrap}
+.mri-w{display:block;overflow:hidden;padding:.04em 0}.mri-w>span{display:block;transform:translateY(105%)}
+.mri-win{position:relative;flex:none;width:0;height:0;margin:0 .14em;overflow:hidden}
+.mri-win img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;visibility:hidden}.mri-win img.on{visibility:visible}
+html.mri-on,html.mri-on body{overflow:hidden}
+@media(prefers-reduced-motion:reduce){.mri{display:none}}
 </style></head><body>
+<div class="mri" id="mri" aria-hidden="true"><div class="mri-row"><span class="mri-w"><span id="mri1">Mega</span></span><span class="mri-win" id="mriWin"><img src="MR%20Imagery/intro/g1.jpg" alt="" data-a=".8"><img src="MR%20Imagery/intro/g2.jpg" alt="" data-a="1"><img src="MR%20Imagery/intro/g3.jpg" alt="" data-a=".75"><img src="MR%20Imagery/intro/g4.jpg" alt="" data-a="1.25"><img src="MR%20Imagery/intro/g5.jpg" alt="" data-a=".8"><img src="MR%20Imagery/intro/g6.jpg" alt="" data-a="1"><img src="MR%20Imagery/intro/g7.jpg" alt="" data-a=".75"><img src="MR%20Imagery/intro/g8.jpg" alt="" data-a=".8"><img src="MR%20Imagery/intro/g9.jpg" alt="" data-a="1"></span><span class="mri-w"><span id="mri2">Rewards</span></span></div></div><script>setTimeout(function(){var m=document.getElementById('mri');if(m){m.remove();document.documentElement.classList.remove('mri-on')}},9000)</script>
 <div class="wtk" aria-label="Recent winners"><span class="wlb">Just won</span><div class="wtr"><div class="wtt" id="wtt"></div></div><a class="wsa" href="winners.html">See all winners</a></div><header class="nav"><a class="lg" href="#hero" aria-label="Mega Rewards home"><img class="lgo" src="MR%20Imagery/Logo/mega-rewards.png" alt="Mega Rewards"></a><div class="nr"><a class="mini" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><button id="mb" class="tx">Explore</button><button id="hb" class="hb" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button><a class="li" href="account.html#login">Log in</a><a class="jb" href="account.html">Join free</a></div></header>
 <div id="menu"><div class="row"><span>01</span><a href="giveaways.html"><b>Win</b></a><div class="sl"><a href="giveaways.html">Giveaways</a><a href="tipping.html">Tipping</a><a href="winners.html">Winners</a><a href="giveaways.html#spin">Mega Spin</a></div></div><div class="row"><span>02</span><a href="store.html"><b>Save</b></a><div class="sl"><a href="store.html">Store</a><a href="store.html#catch">Mega Catch</a><a href="plus.html#how">How savings work</a></div></div><div class="row"><span>03</span><a href="plus.html"><b>Plus</b></a><div class="sl"><a href="plus.html#plans">Plans</a><a href="plus.html#calc">Calculator</a><a href="plus.html#faq">FAQ</a></div></div><div class="row"><span>04</span><a href="rewards.html"><b>Rewards</b></a><div class="sl"><a href="rewards.html">Points</a><a href="rewards.html#missions">Missions</a><a href="rewards.html#shop">Points shop</a><a href="rewards.html#board">Leaderboard</a></div></div><div class="row"><span>05</span><a href="community.html"><b>Community</b></a><div class="sl"><a href="community.html">Partners</a><a href="community.html#moments">Mega Moments</a><a href="partner.html">Partner with us</a><a href="account.html#login">Log in</a></div></div><div class="mact"><a class="mc" href="giveaways.html"><u></u><span>Next draw</span><b data-cd>--:--:--</b></a><a class="mbtn" id="mLi" href="account.html#login">Log in</a><a class="mbtn pri" id="mJo" href="account.html">Join free</a></div></div>
 
@@ -488,7 +498,23 @@ draw()})();
 (function(){const t=document.getElementById('wtt'),W=window.MR_WINNERS||[];if(!t||!W.length){const k=document.querySelector('.wtk');if(k)k.hidden=true;document.documentElement.style.setProperty('--tkh','0px');return}
 const esc=x=>String(x).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const one=W.map(w=>`<span><b>${esc(w.who)}</b> ${esc(w.won)} <em>· ${esc(w.where)}</em></span>`).join('');t.innerHTML=one+one;t.lastElementChild&&[...t.children].slice(W.length).forEach(e=>e.setAttribute('aria-hidden','true'))})();
-</script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+</script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script><script>
+(function(){var el=document.getElementById('mri');if(!el)return;
+ var root=document.documentElement,win=document.getElementById('mriWin'),imgs=[].slice.call(win.querySelectorAll('img'));
+ function done(){if(el.parentNode)el.remove();root.classList.remove('mri-on')}
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches||!window.gsap){done();return}
+ window.MRI=true;root.classList.add('mri-on');
+ function show(i){imgs.forEach(function(m,k){m.classList.toggle('on',k===i)})}
+ var tl=gsap.timeline(),H=1.28,H2=1.55,t=1.0;
+ tl.fromTo(['#mri1','#mri2'],{y:0,yPercent:105},{yPercent:0,duration:.8,ease:'power3.out'},.15)
+   .call(show,[0],t).to(win,{height:H+'em',width:(H*.8)+'em',duration:.55,ease:'power3.inOut'},t);
+ imgs.forEach(function(m,k){if(!k)return;var at=t+.55+(k-1)*.24,h=k>=4?H2:H,a=parseFloat(m.dataset.a);
+   tl.call(show,[k],at).to(win,{width:(h*a)+'em',height:h+'em',duration:.16,ease:'power2.out'},at)});
+ var out=t+.55+(imgs.length-1)*.24+.25;
+ tl.call(function(){dispatchEvent(new Event('mri:reveal'))},null,out)
+   .to(el,{autoAlpha:0,duration:.5,ease:'power1.out',onComplete:done},out);
+})();
+</script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],rm=matchMedia('(prefers-reduced-motion: reduce)').matches,fm=v=>'$'+Math.round(v).toLocaleString('en-US');
 $$('img[data-p]').forEach(i=>{if(i.getBoundingClientRect().top>innerHeight*1.5)i.loading='lazy';i.decoding='async';i.src=`https://images.unsplash.com/photo-${i.dataset.p}?auto=format&fit=crop&q=75&w=${innerWidth>900?1800:1100}`});
@@ -521,7 +547,8 @@ o.size=()=>{const w=innerWidth,h=innerHeight;c.width=w;c.height=h;o.T=Math.ceil(
 o.draw=p=>{x.clearRect(0,0,c.width,c.height);if(p>=1){c.style.visibility='hidden';return}c.style.visibility='visible';o.th.forEach((t,i)=>{if(t>=p){x.fillStyle=o.ac[i]?(col==='#e10600'?'#530e07':'#e10600'):col;x.fillRect((i%o.n)*o.T,Math.floor(i/o.n)*o.T,o.T+1,o.T+1)}})};o.size();addEventListener('resize',o.size);return o}
 // intro curtain
 const cu=mk(document.body,'#0b0b0b',true),pr={p:0};gsap.set('.ln i',{yPercent:112});gsap.set('.hs,.hero .eb',{opacity:0,y:20});gsap.from('.him iframe',{scale:1.25,duration:2.6,ease:'power3.out'});
-gsap.to(pr,{p:1,duration:1.8,delay:.3,ease:'power2.inOut',onUpdate:()=>cu.draw(pr.p),onComplete:()=>gsap.to('.ln i',{yPercent:0,stagger:.12,duration:1.3,ease:'power4.out',onStart:()=>gsap.to('.hs,.hero .eb',{opacity:1,y:0,duration:1,delay:.4})})});
+const heroIn=()=>gsap.to('.ln i',{yPercent:0,stagger:.12,duration:1.3,ease:'power4.out',onStart:()=>gsap.to('.hs,.hero .eb',{opacity:1,y:0,duration:1,delay:.4})});
+if(window.MRI){cu.draw(1);addEventListener('mri:reveal',heroIn,{once:true});setTimeout(heroIn,9000)}else gsap.to(pr,{p:1,duration:1.8,delay:.3,ease:'power2.inOut',onUpdate:()=>cu.draw(pr.p),onComplete:heroIn});
 // hero pin + shrink into card, background goes white for a clean hand-off
 const mob=innerWidth<700;gsap.timeline({scrollTrigger:{trigger:'#hero',start:'top top',end:'+=130%',pin:true,scrub:.6,onUpdate:s=>$('.ht').style.pointerEvents=s.progress>.3?'none':'auto'}}).to('.ht',{yPercent:-25,opacity:0,ease:'none'},0).to('.him',{clipPath:mob?'inset(24% 8% 24% 8% round 14px)':'inset(14% 27% 14% 27% round 18px)',ease:'none'},0).to('.him iframe',{scale:1.3,ease:'none'},0).to('.cue',{opacity:0},0).to('#hero',{backgroundColor:'#fff',ease:'none'},.55);
 // word-by-word reveal
